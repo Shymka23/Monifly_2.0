@@ -10,7 +10,7 @@
 import { ai } from "@/ai/genkit";
 // @ts-ignore - Ігноруємо помилку типів для genkit
 import { z } from "genkit";
-import { toast } from '@/hooks/use-toast';
+import { toast } from "@/hooks/use-toast";
 
 // Define Zod schemas for input and output INSIDE this file. Do not export them.
 const GenerateGoalReminderInputSchema = z.object({
@@ -53,9 +53,9 @@ export async function generateGoalReminder(
     return await generateGoalReminderFlow(input);
   } catch (error) {
     toast({
-      title: 'Помилка AI-помічника',
-      description: 'Не вдалося обробити запит. Спробуйте ще раз пізніше.',
-      variant: 'destructive',
+      title: "Помилка AI-помічника",
+      description: "Не вдалося обробити запит. Спробуйте ще раз пізніше.",
+      variant: "destructive",
     });
     throw error;
   }
@@ -94,7 +94,7 @@ const generateGoalReminderFlow = ai.defineFlow(
     inputSchema: GenerateGoalReminderInputSchema,
     outputSchema: GenerateGoalReminderOutputSchema,
   },
-  async (input) => {
+  async input => {
     const { output } = await reminderPrompt(input);
     if (!output) {
       throw new Error("Не удалось сгенерировать напоминание.");

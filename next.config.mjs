@@ -16,6 +16,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+    unoptimized: process.env.NODE_ENV === "development",
   },
   productionBrowserSourceMaps: false,
   compress: true,
@@ -67,19 +68,13 @@ const nextConfig = {
       };
     }
 
-    // Додаємо noop для handlebars
-    config.module.rules.push({
-      test: /node_modules\/handlebars\/lib\/index\.js$/,
-      use: [
-        {
-          loader: "string-replace-loader",
-          options: {
-            search: "require.extensions",
-            replace: "({})",
-          },
-        },
-      ],
-    });
+    // Виключаємо handlebars з клієнтського білду
+    if (!isServer) {
+      config.module.rules.push({
+        test: /node_modules\/handlebars\/.*\.js$/,
+        use: "null-loader",
+      });
+    }
 
     // Виключаємо genkit з клієнтського білду
     if (!isServer) {

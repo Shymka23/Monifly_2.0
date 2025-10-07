@@ -4,7 +4,7 @@ import { config } from "@/lib/env";
 import api from "@/lib/api";
 import { logger } from "@/lib/logger";
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
