@@ -1,0 +1,166 @@
+{
+  "title": "Budgeting and Plans",
+  "subtitle": "Plan and track your budget effectively",
+  "budgetingPlanning": "Budget Planning",
+  "budgetingPlanningDescription": "Create and manage your budget plans",
+  "addBudgetEntry": "Add Budget Entry",
+  "dialog": {
+    "title": "New Budget Entry",
+    "description": "Add a new regular or one-time budget entry.",
+
+    "edit_title": "Edit Budget Entry",
+    "edit_description": "Update budget entry details.",
+    "description_label": "Description",
+    "description_placeholder": "For example, Apartment Rent, Salary",
+    "description_required": "Description is required",
+    "amount_label": "Amount",
+    "amount_placeholder": "For example, 50000",
+    "amount_required": "Amount is required",
+    "currency_label": "Currency",
+    "currency_placeholder": "Select currency",
+    "currency_required": "Currency is required",
+    "type_label": "Type",
+    "type_income": "Income",
+    "type_expense": "Expense",
+    "type_required": "Type is required",
+    "category_label": "Category",
+    "category_placeholder": "Select category",
+    "category_required": "Category is required",
+    "frequency_label": "Frequency",
+    "frequency_placeholder": "Select frequency",
+    "frequency_required": "Frequency is required",
+    "start_date_label": "Start Date",
+    "start_date_placeholder": "Select date",
+    "start_date_required": "Start date is required",
+    "month_day_label": "Day of Month",
+    "month_day_required": "Day of month is required",
+    "limit_label": "Limit (optional)",
+    "limit_placeholder": "For example, 10000",
+    "saving": "Saving...",
+    "submit": "Add Entry",
+    "update": "Update Entry"
+  },
+  "validation": {
+    "description_min": "Description must be at least 2 characters",
+    "description_max": "Description cannot exceed 100 characters",
+    "amount_invalid": "Enter a valid amount",
+    "amount_positive": "Amount must be greater than 0",
+    "amount_decimals": "Maximum 2 decimal places",
+    "limit_invalid": "Enter a valid limit amount",
+    "limit_positive": "Limit must be greater than 0",
+    "day_range": "Day must be between 1 and 31"
+  },
+  "sections": {
+    "monthlyBudgets": "Category Budgets (Monthly)",
+    "monthlyBudgetsShort": "Monthly Budgets",
+    "monthlyBudgetsDescription": "Track monthly expenses by category with set limits. Progress shown for current month.",
+    "plannedOperations": "Planned Income and One-time Expenses",
+    "plannedOperationsShort": "Planned Operations",
+    "plannedOperationsDescription": "Overview of future or one-time financial operations.",
+    "savingGoals": "Active Saving Goals",
+    "savingGoalsShort": "Saving Goals",
+    "savingGoalsDescription": "Quick overview of your current goals. Manage them in 'Financial Goals' section."
+  },
+  "overview": {
+    "totalBudget": "Total Budget",
+    "spent": "Spent",
+    "remaining": "Remaining",
+    "plannedExpenses": "Planned Expenses",
+    "actualExpenses": "Actual Expenses",
+    "overspent": "Overspent",
+    "overspentBy": "Overspent by",
+    "nearLimit": "Approaching limit"
+  },
+  "categories": {
+    "food": "Food",
+    "transport": "Transport",
+    "entertainment": "Entertainment",
+    "utilities": "Utilities",
+    "healthcare": "Healthcare",
+    "education": "Education",
+    "shopping": "Shopping",
+    "other": "Other"
+  },
+  "actions": {
+    "addBudgetEntry": "Add Budget Entry",
+    "editBudgetEntry": "Edit Budget Entry",
+    "deleteBudgetEntry": "Delete Budget Entry",
+    "createBudgetPlan": "Create Budget Plan"
+  },
+  "periods": {
+    "monthly": "Monthly",
+    "weekly": "Weekly",
+    "yearly": "Yearly",
+    "once": "Once"
+  },
+  "status": {
+    "onTrack": "On Track",
+    "overBudget": "Over Budget",
+    "underBudget": "Under Budget"
+  },
+  "empty": {
+    "monthlyBudgets": "Monthly budgets not added yet",
+    "monthlyBudgetsDescription": "Add an expense entry with 'Monthly' frequency and specify a limit.",
+    "budgetEntries": "No budget entries yet",
+    "budgetEntriesDescription": "Start planning your income and expenses by adding your first entry.",
+    "createFirst": "Create First Budget"
+  },
+
+  "budgetEntries": "Budget Entries",
+  "budgetEntriesDescription": "Plan and track your income and expenses",
+  "notifications": {
+    "editTitle": "Edit",
+    "editDescription": "To edit, go to 'Financial Goals' section",
+    "deleteTitle": "Delete",
+    "deleteDescription": "Are you sure you want to delete this goal?",
+    "deleteConfirm": "Delete",
+    "deleteCancel": "Cancel"
+  },
+  "messages": {
+    "budgetEntryAdded": "Budget entry added successfully",
+    "budgetEntryUpdated": "Budget entry updated successfully",
+    "budgetEntryDeleted": "Budget entry deleted successfully",
+    "noBudgetEntries": "No budget entries found",
+    "addFirstEntry": "Add your first budget entry to get started",
+    "error": "Error",
+    "saveError": "Failed to save entry: {{error}}"
+  },
+  "stats": {
+    "totalBudget": "Total Budget",
+    "spent": "Spent",
+    "remaining": "Remaining",
+    "overspent": "Overspent",
+    "status": "Status",
+    "allGood": "All Good",
+    "categoriesOver": "over budget",
+    "withinBudget": "Within Budget",
+    "needToCut": "Need to Cut Expenses",
+    "categories": "category",
+    "ofBudget": "of budget"
+  },
+  "charts": {
+    "budgetVsActual": "Budget vs Actual Spending",
+    "distribution": "Budget Distribution by Categories",
+    "deviations": "Budget Deviations (%)",
+    "budget": "Budget",
+    "actual": "Actual",
+    "deviation": "Deviation",
+    "deviationLabel": "Deviation (%)"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "analytics": "Analytics",
+    "list": "List"
+  },
+  "card": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "nextDate": "Next Date",
+    "dayOfMonth": "{{day}}th of month",
+    "of": "of",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "addBudgetEntryShort": "Add",
+  "budgetLoading": "Loading budget..."
+}

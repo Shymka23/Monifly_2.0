@@ -1,0 +1,45 @@
+{
+  "title": "Debt Management",
+  "subtitle": "Track and manage your debts effectively",
+  "sections": {
+    "myDebts": "My Debts",
+    "myDebtsShort": "I Owe",
+    "myDebtsDescription": "List of people or organizations you owe",
+    "debtsToMe": "Debts to Me",
+    "debtsToMeShort": "Owed to Me",
+    "debtsToMeDescription": "List of people or organizations that owe you"
+  },
+  "empty": {
+    "myDebts": "You have no active debts",
+    "myDebtsDescription": "All your obligations are fulfilled!",
+    "debtsToMe": "No one owes you",
+    "debtsToMeDescription": "All debts are returned!"
+  },
+  "actions": {
+    "addDebt": "Add Debt",
+    "editDebt": "Edit Debt",
+    "deleteDebt": "Delete Debt",
+    "recordPayment": "Record Payment"
+  },
+  "types": {
+    "creditCard": "Credit Card",
+    "loan": "Loan",
+    "mortgage": "Mortgage",
+    "personalLoan": "Personal Loan",
+    "other": "Other"
+  },
+  "status": {
+    "active": "Active",
+    "paid": "Paid Off",
+    "overdue": "Overdue"
+  },
+  "messages": {
+    "debtAdded": "Debt added successfully",
+    "debtUpdated": "Debt updated successfully",
+    "debtDeleted": "Debt deleted successfully",
+    "paymentRecorded": "Payment recorded successfully",
+    "debtPaidOff": "Congratulations! Debt paid off!",
+    "noDebts": "No debts found",
+    "addFirstDebt": "Add your first debt to track"
+  }
+}

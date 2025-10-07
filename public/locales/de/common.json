@@ -1,0 +1,94 @@
+{
+  "loading": "Laden...",
+  "validation": {
+    "required": "Dieses Feld ist erforderlich",
+    "invalidAmount": "Ungültiges Betragsformat"
+  },
+  "buttons": {
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "add": "Hinzufügen"
+  },
+  "form": {
+    "walletName": "Wallet-Name",
+    "currencyLabel": "Währung",
+    "currencyPlaceholder": "Währung auswählen"
+  },
+  "categories": {
+    "other": "Sonstiges",
+    "food": "Lebensmittel",
+    "housing": "Wohnen",
+    "salary": "Gehalt",
+    "healthcare": "Gesundheit",
+    "investment": "Investitionen",
+    "utilities": "Nebenkosten",
+    "crypto": "Kryptowährung",
+    "education": "Bildung",
+    "debtpayment": "Schuldentilgung",
+    "gifts": "Geschenke",
+    "shopping": "Einkaufen",
+    "travel": "Reisen",
+    "entertainment": "Unterhaltung",
+    "transport": "Transport"
+  },
+  "transaction": {
+    "title": "Transaktionen",
+    "recentTransactions": "Letzte Transaktionen",
+    "recentTransactionsWithPeriod": "Transaktionen für {{period}}",
+    "recentTransactionsForWallet": "Wallet-Transaktionen",
+    "date": "Datum",
+    "description": "Beschreibung",
+    "category": "Kategorie",
+    "amount": "Betrag",
+    "noTransactions": "Keine Transaktionen für diesen Zeitraum",
+    "categories": {
+      "food": "Lebensmittel",
+      "transport": "Transport",
+      "housing": "Wohnen",
+      "utilities": "Nebenkosten",
+      "entertainment": "Unterhaltung",
+      "healthcare": "Gesundheit",
+      "education": "Bildung",
+      "salary": "Gehalt",
+      "gifts": "Geschenke",
+      "investment": "Investitionen",
+      "crypto": "Kryptowährung",
+      "shopping": "Einkaufen",
+      "travel": "Reisen",
+      "debtpayment": "Schuldentilgung",
+      "other": "Sonstiges"
+    }
+  },
+  "labels": {
+    "period": "Zeitraum",
+    "walletsTitle": "Meine Wallets",
+    "inCurrency": "in {{currency}}"
+  },
+  "user": {
+    "avatarAlt": "Benutzer-Avatar",
+    "defaultName": "Benutzer",
+    "defaultUsername": "benutzer"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "budgeting": "Budgetierung",
+    "lifeGoals": "Lebensziele",
+    "debts": "Schulden",
+    "aiAssistant": "KI-Assistent",
+    "crypto": "Krypto",
+    "investment": "Investment",
+    "settings": "Einstellungen",
+    "menu": "Menü"
+  },
+  "theme": {
+    "light": "Helles Design",
+    "dark": "Dunkles Design"
+  },
+  "app": {
+    "title": "Monifly - Intelligentes Finanzmanagement",
+    "description": "Übernehmen Sie die Kontrolle über Ihre Finanzen mit Monifly. Verfolgen Sie Ausgaben, verwalten Sie Wallets und erhalten Sie KI-gestützte Budgetierungsberatung.",
+    "slogan": "Verwalten Sie Ihr Geld intelligent"
+  }
+}

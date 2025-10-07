@@ -1,0 +1,58 @@
+{
+  "title": "Crypto",
+  "subtitle": "Overview and analysis of your cryptocurrency assets",
+  "period": "Period:",
+  "buttons": {
+    "buy": "Buy Crypto",
+    "sell": "Sell",
+    "getInsights": "Get AI Insights"
+  },
+  "assetsTitle": "Your crypto assets",
+  "assetsDescription": "Breakdown of your cryptocurrency holdings.",
+  "asset": {
+    "quantity": "Quantity",
+    "avgPurchasePrice": "Average purchase price",
+    "purchaseValue": "Purchase value",
+    "currentValue": "Current value"
+  },
+  "cards": {
+    "balance": "Crypto Balance",
+    "balanceShort": "Balance",
+    "balanceDescription": "Current portfolio valuation",
+    "bought": "Bought ({{period}})",
+    "boughtShort": "Bought",
+    "boughtDescription": "Purchase expenses for the period",
+    "sold": "Sold ({{period}})",
+    "soldShort": "Sold",
+    "soldDescription": "Income from sales for the period"
+  },
+  "charts": {
+    "fundsFlow": "Funds Flow ({{period}})",
+    "fundsFlowDescription": "Dynamics of crypto asset purchases and sales for the selected period in {{currency}}",
+    "bought": "Purchases",
+    "sold": "Sales"
+  },
+  "insights": {
+    "title": "AI Analysis",
+    "placeholder": "Describe market sentiment...",
+    "noInfo": "Missing Information",
+    "noInfoDescription": "Please describe the current market sentiment.",
+    "error": "Error",
+    "errorDescription": "Failed to get crypto portfolio data. Please try later."
+  },
+  "empty": {
+    "portfolio": "Crypto portfolio is empty.",
+    "noFiatWallets": "No fiat wallets",
+    "addFiatWalletToBuy": "Please add a fiat wallet (e.g., RUB, USD) on the Dashboard to buy crypto.",
+    "addFiatWalletToReceive": "Please add a fiat wallet to receive sale proceeds.",
+    "close": "Close",
+    "notAdded": "No crypto assets added",
+    "clickBuy": "Click \"Buy Crypto\" to add your first asset.",
+    "generating": "Generating...",
+    "aiObservations": "AI Observations",
+    "portfolioSummary": "Portfolio summary (auto-generated)",
+    "currentMarketSentiment": "Current market sentiment",
+    "describeMarket": "Describe your view on the current market."
+  },
+  "loading": "Loading crypto portfolio..."
+}

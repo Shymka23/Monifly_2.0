@@ -1,0 +1,48 @@
+{
+  "title": "Investment Portfolio",
+  "subtitle": "Create and manage your investment cases",
+  "overview": {
+    "title": "Investments",
+    "description": "Manage investment cases"
+  },
+  "buttons": {
+    "addCase": "Add investment case",
+    "addCaseShort": "Add case",
+    "getAiAdvice": "Get AI advice",
+    "delete": "Delete"
+  },
+  "toasts": {
+    "caseDeletedTitle": "Investment case deleted",
+    "caseDeletedDescription": "The case has been deleted successfully."
+  },
+  "charts": {
+    "assetTypeDistribution": "Asset type distribution",
+    "assetTypeDistributionDesc": "Share of each asset type in the portfolio ({{currency}}).",
+    "regionDistribution": "Regional distribution",
+    "regionDistributionDesc": "Geographic diversification of the portfolio ({{currency}}).",
+    "profitLossByAssets": "Profit/Loss by assets",
+    "profitLossByAssetsDesc": "Unrealized P/L for each asset ({{currency}}).",
+    "profitLossLabel": "Profit/Loss ({{currency}})",
+    "noData": "No data to display.",
+    "noRegionsData": "No data or regions not specified."
+  },
+  "ai": {
+    "title": "AI diversification tips",
+    "description": "Get general recommendations about your portfolio structure. (Not financial advice)",
+    "recommendationTitle": "AI recommendation:",
+    "errorTitle": "Error",
+    "errorDescription": "Failed to generate portfolio advice. Try again later."
+  },
+  "cases": {
+    "title": "Investment cases",
+    "emptyTitle": "No investment cases yet",
+    "emptyDescription": "Start by creating your first investment case."
+  },
+  "deleteDialog": {
+    "title": "Are you sure?",
+    "description": "This action is irreversible. The investment case and all its assets will be deleted.",
+    "confirm": "Delete",
+    "cancel": "Cancel"
+  },
+  "loading": "Loading investments..."
+}

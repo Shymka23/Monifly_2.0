@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "title": "Smart Financial Management",
+    "subtitle": "Take control of your finances with Monifly",
+    "startJourney": "Get Started",
+    "login": "Sign in",
+    "signup": "Sign up"
+  },
+  "features": {
+    "analytics": {
+      "title": "Analytics",
+      "description": "Get detailed analytics of your expenses and income"
+    },
+    "walletManagement": {
+      "title": "Wallet Management",
+      "description": "Manage all your wallets in one place"
+    },
+    "financialGoals": {
+      "title": "Financial Goals",
+      "description": "Set and achieve your financial goals"
+    },
+    "security": {
+      "title": "Security",
+      "description": "Your data is securely protected"
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "free": {
+      "title": "Free",
+      "features": {
+        "1": "Basic analytics",
+        "2": "Up to 3 wallets",
+        "3": "Basic financial goals",
+        "4": "Basic support"
+      }
+    },
+    "pro": {
+      "title": "Pro",
+      "price": "$9.99/mo",
+      "popular": "Popular",
+      "features": {
+        "1": "Advanced analytics",
+        "2": "Unlimited wallets",
+        "3": "Advanced financial goals",
+        "4": "Priority support"
+      }
+    }
+  }
+}

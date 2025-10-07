@@ -1,0 +1,177 @@
+{
+  "title": "Life Goals",
+  "subtitle": "Create, track, and achieve your life aspirations. Plan important events.",
+
+  "sections": {
+    "goals": "Goals",
+    "goalsDescription": "Create and manage your life goals",
+    "calendar": "Life Calendar"
+  },
+
+  "goals": {
+    "title": "Goals",
+    "description": "Create and manage your life goals",
+    "placeholder": "Enter your goal",
+    "career": {
+      "title": "Career Goals",
+      "add": "Add Career Goal",
+      "label": "Career Goal",
+      "placeholder": "Describe your career aspiration",
+      "cancel": "Cancel",
+      "save": "Save"
+    }
+  },
+
+  "calendar": {
+    "yearLabel": "{{year}}: Age {{age}}",
+    "description": "Your journey through life, marking each year with milestones and memories",
+    "empty": {
+      "title": "Empty Calendar",
+      "description": "Start planning your life by adding your first milestone",
+      "addFirst": "Add First Milestone"
+    }
+  },
+
+  "yearLabel": "{{year}}: Age {{age}}",
+  "empty": {
+    "description": "Start planning your life by adding your first milestone"
+  },
+
+  "milestoneProgress": {
+    "home": "Home",
+    "progress": "{{percentage}}% completed"
+  },
+
+  "assetAllocation": {
+    "title": "Asset Allocation",
+    "description": "Diversify your investments across different asset classes",
+    "stocks": "Stocks",
+    "bonds": "Bonds",
+    "realEstate": "Real Estate",
+    "cash": "Cash"
+  },
+
+  "inflation": {
+    "title": "Inflation Adjustment",
+    "description": "Protect your financial goals from the eroding effects of inflation"
+  },
+
+  "buttons": {
+    "title": "Actions",
+    "description": "Manage and track your life goals"
+  },
+
+  "loading": "Loading...",
+
+  "futureVision": {
+    "title": "Future Vision",
+    "description": "Define your long-term life vision and aspirations"
+  },
+
+  "addMilestone": "Add Milestone",
+  "addFinancialGoal": "Add Financial Goal",
+
+  "milestone": {
+    "title": "Milestone Title",
+    "titlePlaceholder": "Enter milestone title",
+    "category": "Category",
+    "selectCategory": "Select category"
+  },
+
+  "categories": {
+    "career": "Career",
+    "family": "Family",
+    "health": "Health",
+    "education": "Education",
+    "travel": "Travel",
+    "other": "Other"
+  },
+
+  "reminders": {
+    "title": "Reminders",
+    "titlePlaceholder": "Reminder title",
+    "date": "Date",
+    "selectDate": "Select date",
+    "frequency": "Frequency",
+    "once": "Once",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "priority": "Priority",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe the reminder",
+    "addReminder": "Add Reminder",
+    "list": "Reminders List",
+    "count": "reminders"
+  },
+
+  "priorities": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
+
+  "financialGoals": {
+    "title": "Goal Title",
+    "titlePlaceholder": "Enter financial goal title",
+    "type": "Type",
+    "selectType": "Select type",
+    "income": "Income",
+    "expense": "Expense",
+    "investment": "Investment",
+    "saving": "Saving",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe the financial goal",
+    "currentAmount": "Current Amount",
+    "targetAmount": "Target Amount",
+    "targetDate": "Target Date",
+    "selectDate": "Select date",
+    "monthlyContribution": "Monthly Contribution",
+    "suggestedContribution": "Suggested Contribution",
+    "perMonth": "per month",
+    "suggestedDescription": "Recommended amount to reach the goal",
+    "isRecurring": "Recurring Goal",
+    "additionalInfo": "Additional Information",
+    "monthlyIncome": "Monthly Income",
+    "monthlyExpenses": "Monthly Expenses",
+    "amount": "Amount",
+    "edit": "Edit Financial Goal",
+    "empty": "No financial goals"
+  },
+
+  "milestones": {
+    "title": "Personal Milestones",
+    "empty": "No personal milestones",
+    "edit": "Edit Milestone"
+  },
+
+  "progress": {
+    "title": "Progress",
+    "milestones": "Milestones",
+    "completed": "Completed",
+    "financialGoals": "Financial Goals"
+  },
+
+  "status": {
+    "active": "Active",
+    "completed": "Completed",
+    "paused": "Paused"
+  },
+
+  "confirmations": {
+    "deleteMilestone": "Are you sure you want to delete this milestone?",
+    "deleteGoal": "Are you sure you want to delete this goal?"
+  },
+
+  "noData": {
+    "title": "No Data",
+    "description": "Add goals for this year"
+  },
+
+  "common": {
+    "cancel": "Cancel",
+    "add": "Add",
+    "save": "Save"
+  }
+}

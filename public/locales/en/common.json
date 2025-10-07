@@ -1,0 +1,94 @@
+{
+  "loading": "Loading...",
+  "validation": {
+    "required": "This field is required",
+    "invalidAmount": "Invalid amount format"
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "save": "Save",
+    "edit": "Edit",
+    "add": "Add"
+  },
+  "form": {
+    "walletName": "Wallet name",
+    "currencyLabel": "Currency",
+    "currencyPlaceholder": "Select currency"
+  },
+  "categories": {
+    "other": "Other",
+    "food": "Food",
+    "housing": "Housing",
+    "salary": "Salary",
+    "healthcare": "Healthcare",
+    "investment": "Investment",
+    "utilities": "Utilities",
+    "crypto": "Cryptocurrency",
+    "education": "Education",
+    "debtpayment": "Debt Payment",
+    "gifts": "Gifts",
+    "shopping": "Shopping",
+    "travel": "Travel",
+    "entertainment": "Entertainment",
+    "transport": "Transport"
+  },
+  "transaction": {
+    "title": "Transactions",
+    "recentTransactions": "Recent Transactions",
+    "recentTransactionsWithPeriod": "Transactions for {{period}}",
+    "recentTransactionsForWallet": "Wallet Transactions",
+    "date": "Date",
+    "description": "Description",
+    "category": "Category",
+    "amount": "Amount",
+    "noTransactions": "No transactions for this period",
+    "categories": {
+      "food": "Food",
+      "transport": "Transport",
+      "housing": "Housing",
+      "utilities": "Utilities",
+      "entertainment": "Entertainment",
+      "healthcare": "Healthcare",
+      "education": "Education",
+      "salary": "Salary",
+      "gifts": "Gifts",
+      "investment": "Investment",
+      "crypto": "Cryptocurrency",
+      "shopping": "Shopping",
+      "travel": "Travel",
+      "debtpayment": "Debt Payment",
+      "other": "Other"
+    }
+  },
+  "labels": {
+    "period": "Period",
+    "walletsTitle": "My Wallets",
+    "inCurrency": "in {{currency}}"
+  },
+  "user": {
+    "avatarAlt": "User Avatar",
+    "defaultName": "User",
+    "defaultUsername": "user"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "budgeting": "Budgeting",
+    "lifeGoals": "Life Goals",
+    "debts": "Debts",
+    "aiAssistant": "AI Assistant",
+    "crypto": "Crypto",
+    "investment": "Investment",
+    "settings": "Settings",
+    "menu": "Menu"
+  },
+  "theme": {
+    "light": "Light Theme",
+    "dark": "Dark Theme"
+  },
+  "app": {
+    "title": "Monifly - Smart Financial Management",
+    "description": "Take control of your finances with Monifly. Track expenses, manage wallets, and get AI-powered budgeting advice.",
+    "slogan": "Manage Your Money Smartly"
+  }
+}

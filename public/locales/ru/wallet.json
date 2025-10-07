@@ -1,0 +1,16 @@
+{
+  "add": "Добавить кошелек",
+  "addTitle": "Добавить новый кошелек",
+  "addDescription": "Создайте новый кошелек для отслеживания ваших финансов",
+  "iconLabel": "Иконка",
+  "nameLabel": "Название кошелька",
+  "namePlaceholder": "например, Сберегательный счет",
+  "colorLabel": "Цвет",
+  "currencyLabel": "Валюта",
+  "currencyPlaceholder": "Выберите валюту",
+  "initialBalanceLabel": "Начальный баланс",
+  "initialBalancePlaceholder": "например, 1000",
+  "cancel": "Отмена",
+  "added": "Кошелек добавлен",
+  "addedDescription": "Кошелек \"{{name}}\" успешно создан"
+}

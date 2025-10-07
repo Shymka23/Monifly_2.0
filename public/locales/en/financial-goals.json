@@ -1,0 +1,46 @@
+{
+  "title": "Financial Goals and Plans",
+  "subtitle": "Create, track and achieve your financial aspirations. Plan important events.",
+  "sections": {
+    "goals": "Goals",
+    "goalsDescription": "Create and manage financial goals",
+    "activeGoals": "Active Goals",
+    "calendar": "Calendar",
+    "calendarDescription": "Calendar of Events",
+    "calendarFull": "Goals ({{goals}}), operations ({{operations}}), notes ({{notes}})"
+  },
+  "actions": {
+    "addGoal": "Add Goal",
+    "addGoalShort": "Add",
+    "editGoal": "Edit Goal",
+    "deleteGoal": "Delete Goal",
+    "markCompleted": "Mark as Completed",
+    "addNote": "Record",
+    "addNoteShort": "Record"
+  },
+  "types": {
+    "savings": "Savings",
+    "investment": "Investment",
+    "debt": "Debt Payment",
+    "purchase": "Major Purchase",
+    "emergency": "Emergency Fund"
+  },
+  "status": {
+    "active": "Active",
+    "completed": "Completed",
+    "paused": "Paused",
+    "cancelled": "Cancelled"
+  },
+  "calendar": {
+    "eventsOn": "Events on",
+    "eventsOnDate": "Events on {{date}}"
+  },
+  "messages": {
+    "goalAdded": "Financial goal added successfully",
+    "goalUpdated": "Financial goal updated successfully",
+    "goalDeleted": "Financial goal deleted successfully",
+    "goalCompleted": "Congratulations! Goal completed!",
+    "noGoals": "No financial goals found",
+    "addFirstGoal": "Set your first financial goal"
+  }
+}

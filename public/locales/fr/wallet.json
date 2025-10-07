@@ -1,0 +1,16 @@
+{
+  "add": "Ajouter un portefeuille",
+  "addTitle": "Ajouter un nouveau portefeuille",
+  "addDescription": "Créez un nouveau portefeuille pour suivre vos finances",
+  "iconLabel": "Icône",
+  "nameLabel": "Nom du portefeuille",
+  "namePlaceholder": "par exemple, Compte d'épargne",
+  "colorLabel": "Couleur",
+  "currencyLabel": "Devise",
+  "currencyPlaceholder": "Sélectionner la devise",
+  "initialBalanceLabel": "Solde initial",
+  "initialBalancePlaceholder": "par exemple, 1000",
+  "cancel": "Annuler",
+  "added": "Portefeuille ajouté",
+  "addedDescription": "Le portefeuille \"{{name}}\" a été créé avec succès"
+}

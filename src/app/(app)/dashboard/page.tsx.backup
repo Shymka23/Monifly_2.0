@@ -1,0 +1,560 @@
+"use client";
+
+import { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { WalletCard } from "@/components/dashboard/wallet-card";
+import { TransactionList } from "@/components/dashboard/transaction-list";
+import { AddWalletDialog } from "@/components/dashboard/add-wallet-dialog";
+import { AddTransactionDialog } from "@/components/dashboard/add-transaction-dialog";
+import { EditTransactionDialog } from "@/components/dashboard/EditTransactionDialog";
+import {
+  useBudgetStore,
+  type FilterPeriodType,
+  FILTER_PERIOD_LABELS,
+} from "@/hooks/use-budget-store";
+import { OverviewCards } from "@/components/dashboard/overview-cards";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { FileText, SlidersHorizontal, Filter } from "lucide-react";
+import MonthlySummaryChart from "@/components/dashboard/charts/monthly-summary-chart";
+import CategoryPieChart from "@/components/dashboard/charts/category-pie-chart";
+import WalletDistributionPieChart from "@/components/dashboard/charts/wallet-distribution-pie-chart";
+import TransactionDetailsDialog from "@/components/dashboard/charts/transaction-details-dialog";
+import type { Transaction, TransactionCategory, Wallet } from "@/lib/types";
+import { format, parseISO } from "date-fns";
+import { ru } from "date-fns/locale";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import Image from "next/image";
+import { AppLoader } from "@/components/ui/app-loader";
+import { EditWalletDialog } from "@/components/dashboard/EditWalletDialog";
+import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
+import { useIsMobile } from "@/hooks/use-mobile";
+import type { DragEndEvent } from "@dnd-kit/core";
+
+export default function DashboardPage() {
+  const {
+    wallets,
+    transactions,
+    getTransactionsByWallet,
+    getTransactionsByWalletName,
+    getTransactionsByDate,
+    primaryDisplayCurrency,
+    filterPeriod,
+    setFilterPeriod,
+    userProfile,
+    reorderWallets,
+  } = useBudgetStore(state => ({
+    wallets: state.wallets,
+    transactions: state.transactions,
+    getTransactionsByWallet: state.getTransactionsByWallet,
+    getTransactionsByWalletName: state.getTransactionsByWalletName,
+    getTransactionsByDate: state.getTransactionsByDate,
+    primaryDisplayCurrency: state.primaryDisplayCurrency,
+    filterPeriod: state.filterPeriod,
+    setFilterPeriod: state.setFilterPeriod,
+    userProfile: state.userProfile,
+    reorderWallets: state.reorderWallets,
+  }));
+
+  const [selectedWalletId, setSelectedWalletId] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogTitle, setDialogTitle] = useState("");
+  const [dialogTransactions, setDialogTransactions] = useState<Transaction[]>(
+    []
+  );
+  const [dialogDescription, setDialogDescription] = useState<
+    string | undefined
+  >(undefined);
+
+  const [isEditTransactionDialogOpen, setIsEditTransactionDialogOpen] =
+    useState(false);
+  const [selectedTransactionForEdit, setSelectedTransactionForEdit] =
+    useState<Transaction | null>(null);
+
+  const [editWallet, setEditWallet] = useState<Wallet | null>(null);
+
+  const [walletOrder, setWalletOrder] = useState(wallets.map(w => w.id));
+
+  const isMobile = useIsMobile();
+
+  const dateRange = useBudgetStore(state =>
+    state.getDateRangeForPeriod(filterPeriod)
+  );
+
+  useEffect(() => {
+    setIsClient(true);
+    setWalletOrder(wallets.map(w => w.id));
+  }, [wallets]);
+
+  const getInitials = (firstName?: string, lastName?: string) => {
+    const first = firstName?.[0]?.toUpperCase() || "";
+    const last = lastName?.[0]?.toUpperCase() || "";
+    return first + last || "PN";
+  };
+
+  const displayedTransactions = useMemo(() => {
+    if (!isClient) return [];
+    if (selectedWalletId) {
+      return getTransactionsByWallet(selectedWalletId);
+    }
+    const { start, end } = dateRange;
+    const periodTransactions = transactions.filter(tx => {
+      const txDate = parseISO(tx.date);
+      return txDate >= start && txDate <= end;
+    });
+    return periodTransactions;
+  }, [
+    selectedWalletId,
+    transactions,
+    getTransactionsByWallet,
+    isClient,
+    dateRange,
+  ]);
+
+  const handleCategoryChartClick = (data: {
+    name: string;
+    value: number;
+    originalName: TransactionCategory;
+  }) => {
+    const { start, end } = dateRange;
+    const categoryTransactions = transactions.filter(tx => {
+      const txDate = parseISO(tx.date);
+      return (
+        tx.category === data.originalName &&
+        txDate >= start &&
+        txDate <= end &&
+        tx.type === "expense"
+      );
+    });
+    setDialogTitle(
+      `Расходы: ${data.name} (${FILTER_PERIOD_LABELS[filterPeriod]})`
+    );
+    setDialogDescription(
+      `Расходы в категории "${data.name}" за ${FILTER_PERIOD_LABELS[
+        filterPeriod
+      ].toLowerCase()}, в ${primaryDisplayCurrency}.`
+    );
+    setDialogTransactions(categoryTransactions);
+    setDialogOpen(true);
+  };
+
+  const handleWalletChartClick = (data: { name: string; value: number }) => {
+    const walletTransactions = getTransactionsByWalletName(data.name);
+    const { start, end } = dateRange;
+    const periodWalletTransactions = walletTransactions.filter(tx => {
+      const txDate = parseISO(tx.date);
+      return txDate >= start && txDate <= end;
+    });
+    setDialogTitle(
+      `Транзакции: ${data.name} (${FILTER_PERIOD_LABELS[filterPeriod]})`
+    );
+    setDialogDescription(
+      `Операции по кошельку "${data.name}" за ${FILTER_PERIOD_LABELS[
+        filterPeriod
+      ].toLowerCase()}.`
+    );
+    setDialogTransactions(periodWalletTransactions);
+    setDialogOpen(true);
+  };
+
+  const handleMonthlySummaryClick = (data: {
+    date: string;
+    income: number;
+    expenses: number;
+    balance: number;
+  }) => {
+    if (!data || !data.date) return;
+
+    const dailyTransactions = getTransactionsByDate(data.date);
+    const formattedDate = format(new Date(data.date), "PPP", { locale: ru }); // Date formatting can be localized later
+    setDialogTitle(`Транзакции за ${formattedDate}`);
+    setDialogDescription(
+      `Доходы: ${data.income.toLocaleString(undefined, {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2,
+      })} ${primaryDisplayCurrency}, Расходы: ${data.expenses.toLocaleString(
+        undefined,
+        { minimumFractionDigits: 0, maximumFractionDigits: 2 }
+      )} ${primaryDisplayCurrency}`
+    );
+    setDialogTransactions(dailyTransactions);
+    setDialogOpen(true);
+  };
+
+  const handleOpenEditTransactionDialog = (transaction: Transaction) => {
+    setSelectedTransactionForEdit(transaction);
+    setIsEditTransactionDialogOpen(true);
+  };
+
+  const sensors = useSensors(useSensor(PointerSensor));
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (!over) return;
+    const activeId = String(active.id);
+    const overId = String(over.id);
+    if (activeId !== overId) {
+      const oldIndex = walletOrder.indexOf(activeId);
+      const newIndex = walletOrder.indexOf(overId);
+      const newOrder = arrayMove(walletOrder, oldIndex, newIndex);
+      setWalletOrder(newOrder);
+      reorderWallets(newOrder);
+    }
+  };
+
+  type SortableWalletCardProps = {
+    wallet: Wallet;
+    [key: string]: unknown;
+  };
+  function SortableWalletCard({ wallet, ...props }: SortableWalletCardProps) {
+    const { attributes, listeners, setNodeRef, transform, transition } =
+      useSortable({ id: wallet.id });
+    const style = {
+      transform: CSS.Transform.toString(transform),
+      transition,
+      cursor: "grab",
+    };
+    return (
+      <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+        <WalletCard wallet={wallet} {...props} />
+      </div>
+    );
+  }
+
+  if (!isClient) {
+    return <AppLoader text="Загрузка панели управления..." />;
+  }
+
+  return (
+    <>
+      <div className="container-fluid space-responsive animate-fade-in">
+          {/* Hero Section */}
+          <div className="relative overflow-hidden rounded-3xl gradient-bg p-6 lg:p-8 mb-8 shadow-modern hover-lift">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+            <div className="relative z-10">
+              <h1 className="text-responsive-xl font-bold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
+                Панель управления
+              </h1>
+              <p className="text-muted-foreground text-responsive-base">
+                Управляйте своими финансами умно и эффективно
+              </p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6 mb-8">
+                      {/* User Profile Card */}
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
+              <Link
+                href="/settings"
+                className="group relative"
+              >
+                <div className="flex items-center gap-4 p-4 rounded-2xl glass shadow-modern hover-lift transition-all duration-300 group-hover:shadow-lg">
+                  <div className="relative w-16 h-16 lg:w-20 lg:h-20">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-accent/20 animate-glow" />
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                      {userProfile.avatarDataUrl ? (
+                        <Image
+                          src={userProfile.avatarDataUrl}
+                          alt="Аватар пользователя"
+                          fill
+                          style={{ objectFit: "cover" }}
+                          className="transition-all duration-500 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                          <span className="text-2xl lg:text-3xl font-bold text-primary">
+                            {getInitials(userProfile.firstName, userProfile.lastName)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-semibold text-foreground truncate">
+                      {userProfile.firstName || "User"}
+                    </h3>
+                    <p className="text-sm text-muted-foreground truncate">
+                      {userProfile.email || "user@example.com"}
+                    </p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                      <span className="text-xs text-green-600 dark:text-green-400">Online</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+              <AddWalletDialog onWalletAdded={id => setSelectedWalletId(id)} />
+              <AddTransactionDialog
+                onTransactionAdded={id => setSelectedWalletId(id)}
+              />
+            </div>
+        </div>
+
+                  {/* Filter Section */}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-4 rounded-2xl glass border border-border/50 mb-8">
+            <div className="flex items-center gap-2">
+              <Filter className="h-5 w-5 text-primary" />
+              <Label className="text-sm font-medium text-foreground">
+                Период анализа
+              </Label>
+            </div>
+            <Select
+              value={filterPeriod}
+              onValueChange={value => setFilterPeriod(value as FilterPeriodType)}
+            >
+              <SelectTrigger className="w-full sm:w-[220px] h-10 border-border/50 bg-background/80 hover:bg-background transition-colors">
+                <SelectValue placeholder="Выберите период" />
+              </SelectTrigger>
+              <SelectContent>
+                {(Object.keys(FILTER_PERIOD_LABELS) as FilterPeriodType[]).map(
+                  periodKey => (
+                    <SelectItem
+                      key={periodKey}
+                      value={periodKey}
+                      className="text-sm"
+                    >
+                      {FILTER_PERIOD_LABELS[periodKey]}
+                    </SelectItem>
+                  )
+                )}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Overview Cards */}
+          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <OverviewCards />
+          </div>
+
+          {/* Charts Section */}
+          <div className="space-y-8">
+            {/* Monthly Summary Chart */}
+            <div className="animate-scale-in" style={{ animationDelay: '0.3s' }}>
+              <MonthlySummaryChart onDataClick={handleMonthlySummaryClick} />
+            </div>
+
+            {/* Pie Charts Grid */}
+            <div className="grid-responsive-2 gap-6">
+              <div className="animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
+                <CategoryPieChart onCategoryClick={handleCategoryChartClick} />
+              </div>
+              <div className="animate-slide-in-right" style={{ animationDelay: '0.5s' }}>
+                <WalletDistributionPieChart onWalletClick={handleWalletChartClick} />
+              </div>
+            </div>
+          </div>
+
+          {/* Wallets Section */}
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-6 rounded-2xl gradient-bg border border-border/20">
+              <div>
+                <h2 className="text-responsive-lg font-bold tracking-tight text-foreground flex items-center gap-2">
+                  <SlidersHorizontal className="h-6 w-6 text-primary" />
+                  Кошельки
+                </h2>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {wallets.length} активных кошельков
+                </p>
+              </div>
+              {selectedWalletId && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setSelectedWalletId(null)}
+                  className="border-border/50 hover:bg-background/80 transition-all duration-300"
+                >
+                  Показать все кошельки
+                </Button>
+              )}
+            </div>
+            
+            {wallets.length > 0 ? (
+              <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                {isMobile ? (
+                  <div className="grid-responsive gap-6">
+                    {walletOrder.map((id, index) => {
+                      const wallet = wallets.find(w => w.id === id);
+                      return wallet ? (
+                        <div 
+                          key={wallet.id}
+                          className="animate-scale-in hover-lift"
+                          style={{ animationDelay: `${0.1 * index}s` }}
+                        >
+                          <WalletCard
+                            wallet={wallet}
+                            onClick={() => setEditWallet(wallet)}
+                            isSelected={selectedWalletId === wallet.id}
+                          />
+                        </div>
+                      ) : null;
+                    })}
+                  </div>
+                ) : (
+                  <DndContext
+                    sensors={sensors}
+                    collisionDetection={closestCenter}
+                    onDragEnd={handleDragEnd}
+                  >
+                    <SortableContext
+                      items={walletOrder}
+                      strategy={verticalListSortingStrategy}
+                    >
+                      <div className="grid-responsive gap-6">
+                        {walletOrder.map((id, index) => {
+                          const wallet = wallets.find(w => w.id === id);
+                          return wallet ? (
+                            <div 
+                              key={wallet.id}
+                              className="animate-scale-in"
+                              style={{ animationDelay: `${0.1 * index}s` }}
+                            >
+                              <SortableWalletCard
+                                wallet={wallet}
+                                onClick={() => setEditWallet(wallet)}
+                                isSelected={selectedWalletId === wallet.id}
+                              />
+                            </div>
+                          ) : null;
+                        })}
+                      </div>
+                    </SortableContext>
+                  </DndContext>
+                )}
+              </div>
+            ) : (
+              <Card className="text-center p-12 border-dashed border-2 border-muted-foreground/20 bg-gradient-to-br from-muted/20 to-transparent animate-fade-in">
+                <CardContent className="space-y-4">
+                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center animate-bounce-subtle">
+                    <SlidersHorizontal className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-responsive-lg">Кошельков пока нет</CardTitle>
+                  <CardDescription className="text-responsive-base max-w-md mx-auto">
+                    Начните с добавления первого кошелька для управления вашими
+                    средствами.
+                  </CardDescription>
+                  <div className="pt-4">
+                    <AddWalletDialog />
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+
+          {/* Transactions Section */}
+          <div className="animate-fade-in" style={{ animationDelay: '0.7s' }}>
+            <TransactionList
+              transactions={displayedTransactions}
+              wallets={wallets}
+              title={
+                selectedWalletId
+                  ? `Транзакции: ${
+                      wallets.find(w => w.id === selectedWalletId)?.name
+                    }`
+                  : `Все транзакции (${FILTER_PERIOD_LABELS[
+                      filterPeriod
+                    ].toLowerCase()})`
+              }
+              onEditTransaction={handleOpenEditTransactionDialog}
+            />
+          </div>
+
+          {/* Reports Section */}
+          <div className="animate-scale-in" style={{ animationDelay: '0.8s' }}>
+            <Card className="relative overflow-hidden glass shadow-modern hover-lift border border-border/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+              <CardHeader className="relative z-10">
+                <CardTitle className="flex items-center gap-3 text-responsive-lg">
+                  <div className="p-2 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20">
+                    <FileText className="h-6 w-6 text-primary" />
+                  </div>
+                  Отчеты
+                </CardTitle>
+                <CardDescription className="text-responsive-base">
+                  Создание и экспорт финансовых отчетов для анализа.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="relative z-10 text-center space-y-4">
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-muted/30 to-muted/10 flex items-center justify-center">
+                    <FileText className="h-6 w-6 text-muted-foreground animate-float" />
+                  </div>
+                  <p className="text-sm text-muted-foreground max-w-md">
+                    Функциональность экспорта отчетов в PDF и CSV формате будет доступна в следующих обновлениях.
+                  </p>
+                </div>
+                <Button 
+                  variant="outline" 
+                  disabled
+                  className="border-border/50 hover:bg-background/80 transition-all duration-300"
+                >
+                  Создать отчет (скоро)
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <TransactionDetailsDialog
+          isOpen={dialogOpen}
+          onOpenChange={setDialogOpen}
+          title={dialogTitle}
+          transactions={dialogTransactions}
+          wallets={wallets}
+          description={dialogDescription}
+        />
+        
+        {selectedTransactionForEdit && (
+          <EditTransactionDialog
+            isOpen={isEditTransactionDialogOpen}
+            onClose={() => {
+              setIsEditTransactionDialogOpen(false);
+              setSelectedTransactionForEdit(null);
+            }}
+            transactionToEdit={selectedTransactionForEdit}
+            wallets={wallets}
+          />
+        )}
+        
+        {editWallet && (
+          <EditWalletDialog
+            wallet={editWallet}
+            isOpen={!!editWallet}
+            onClose={() => setEditWallet(null)}
+          />
+        )}
+      </div>
+    </>
+  );
+}

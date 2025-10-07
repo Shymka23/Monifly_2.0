@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Production builds
+.next/
+out/
+dist/
+build/
+
+# Package files
+package-lock.json
+yarn.lock
+
+# Environment files
+.env*
+
+# Logs
+*.log
+
+# Cache
+.cache/
+.parcel-cache/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Generated files
+public/sw.js
+public/workbox-*.js
+
+# Documentation
+README.md
+PROJECT_STRUCTURE.md
+docs/
+
+# Config files that should not be formatted
+components.json 

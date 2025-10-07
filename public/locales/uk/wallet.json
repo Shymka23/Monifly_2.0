@@ -1,0 +1,16 @@
+{
+  "add": "Додати гаманець",
+  "addTitle": "Додати новий гаманець",
+  "addDescription": "Створіть новий гаманець для відстеження ваших фінансів",
+  "iconLabel": "Іконка",
+  "nameLabel": "Назва гаманця",
+  "namePlaceholder": "наприклад, Ощадний рахунок",
+  "colorLabel": "Колір",
+  "currencyLabel": "Валюта",
+  "currencyPlaceholder": "Оберіть валюту",
+  "initialBalanceLabel": "Початковий баланс",
+  "initialBalancePlaceholder": "наприклад, 1000",
+  "cancel": "Скасувати",
+  "added": "Гаманець додано",
+  "addedDescription": "Гаманець \"{{name}}\" успішно створено"
+}

@@ -1,0 +1,164 @@
+{
+  "title": "Budgetierung und Pläne",
+  "subtitle": "Planen und verfolgen Sie Ihr Budget effektiv",
+  "budgetingPlanning": "Budgetplanung",
+  "budgetingPlanningDescription": "Erstellen und verwalten Sie Ihre Budgetpläne",
+  "addBudgetEntry": "Budgeteintrag hinzufügen",
+  "dialog": {
+    "title": "Neuer Budgeteintrag",
+    "description": "Fügen Sie einen neuen regelmäßigen oder einmaligen Budgeteintrag hinzu.",
+    "edit_title": "Budgeteintrag bearbeiten",
+    "edit_description": "Aktualisieren Sie die Details des Budgeteintrags.",
+    "description_label": "Beschreibung",
+    "description_placeholder": "Zum Beispiel, Wohnungsmiete, Gehalt",
+    "description_required": "Beschreibung ist erforderlich",
+    "amount_label": "Betrag",
+    "amount_placeholder": "Zum Beispiel, 50000",
+    "amount_required": "Betrag ist erforderlich",
+    "currency_label": "Währung",
+    "currency_placeholder": "Währung auswählen",
+    "currency_required": "Währung ist erforderlich",
+    "type_label": "Typ",
+    "type_income": "Einnahme",
+    "type_expense": "Ausgabe",
+    "type_required": "Typ ist erforderlich",
+    "category_label": "Kategorie",
+    "category_placeholder": "Kategorie auswählen",
+    "category_required": "Kategorie ist erforderlich",
+    "frequency_label": "Häufigkeit",
+    "frequency_placeholder": "Häufigkeit auswählen",
+    "frequency_required": "Häufigkeit ist erforderlich",
+    "start_date_label": "Startdatum",
+    "start_date_placeholder": "Datum auswählen",
+    "start_date_required": "Startdatum ist erforderlich",
+    "month_day_label": "Tag des Monats",
+    "month_day_required": "Tag des Monats ist erforderlich",
+    "limit_label": "Limit (optional)",
+    "limit_placeholder": "Zum Beispiel, 10000",
+    "saving": "Speichern...",
+    "submit": "Eintrag hinzufügen",
+    "update": "Eintrag aktualisieren"
+  },
+  "validation": {
+    "description_min": "Beschreibung muss mindestens 2 Zeichen lang sein",
+    "description_max": "Beschreibung darf nicht länger als 100 Zeichen sein",
+    "amount_invalid": "Geben Sie einen gültigen Betrag ein",
+    "amount_positive": "Betrag muss größer als 0 sein",
+    "amount_decimals": "Maximal 2 Dezimalstellen",
+    "limit_invalid": "Geben Sie einen gültigen Limitbetrag ein",
+    "limit_positive": "Limit muss größer als 0 sein",
+    "day_range": "Tag muss zwischen 1 und 31 liegen"
+  },
+  "sections": {
+    "monthlyBudgets": "Kategoriebudgets (Monatlich)",
+    "monthlyBudgetsShort": "Monatsbudgets",
+    "monthlyBudgetsDescription": "Verfolgen Sie monatliche Ausgaben nach Kategorie mit festgelegten Limits. Fortschritt wird für den aktuellen Monat angezeigt.",
+    "plannedOperations": "Geplante Einnahmen und einmalige Ausgaben",
+    "plannedOperationsShort": "Geplante Operationen",
+    "plannedOperationsDescription": "Überblick über zukünftige oder einmalige Finanztransaktionen.",
+    "savingGoals": "Aktive Sparziele",
+    "savingGoalsShort": "Sparziele",
+    "savingGoalsDescription": "Schnellübersicht Ihrer aktuellen Ziele. Verwalten Sie diese im Bereich 'Finanzziele'."
+  },
+  "overview": {
+    "totalBudget": "Gesamtbudget",
+    "spent": "Ausgegeben",
+    "remaining": "Verbleibend",
+    "plannedExpenses": "Geplante Ausgaben",
+    "actualExpenses": "Tatsächliche Ausgaben",
+    "overspent": "Überschritten",
+    "overspentBy": "Überschritten um",
+    "nearLimit": "Nahe am Limit"
+  },
+  "categories": {
+    "food": "Essen",
+    "transport": "Transport",
+    "entertainment": "Unterhaltung",
+    "utilities": "Nebenkosten",
+    "healthcare": "Gesundheit",
+    "education": "Bildung",
+    "shopping": "Einkaufen",
+    "other": "Sonstiges"
+  },
+  "actions": {
+    "addBudgetEntry": "Budgeteintrag hinzufügen",
+    "editBudgetEntry": "Budgeteintrag bearbeiten",
+    "deleteBudgetEntry": "Budgeteintrag löschen",
+    "createBudgetPlan": "Budgetplan erstellen"
+  },
+  "periods": {
+    "monthly": "Monatlich",
+    "weekly": "Wöchentlich",
+    "yearly": "Jährlich",
+    "once": "Einmalig"
+  },
+  "status": {
+    "onTrack": "Im Budget",
+    "overBudget": "Über Budget",
+    "underBudget": "Unter Budget"
+  },
+  "empty": {
+    "monthlyBudgets": "Noch keine Monatsbudgets hinzugefügt",
+    "monthlyBudgetsDescription": "Fügen Sie einen Ausgabeneintrag mit 'Monatlich' Häufigkeit hinzu und legen Sie ein Limit fest.",
+    "budgetEntries": "Noch keine Budgeteinträge",
+    "budgetEntriesDescription": "Beginnen Sie mit der Planung Ihrer Einnahmen und Ausgaben, indem Sie Ihren ersten Eintrag hinzufügen."
+  },
+
+  "budgetEntries": "Budgeteinträge",
+  "budgetEntriesDescription": "Planen und verfolgen Sie Ihre Einnahmen und Ausgaben",
+  "notifications": {
+    "editTitle": "Bearbeiten",
+    "editDescription": "Zum Bearbeiten gehen Sie zum Bereich 'Finanzziele'",
+    "deleteTitle": "Löschen",
+    "deleteDescription": "Sind Sie sicher, dass Sie dieses Ziel löschen möchten?",
+    "deleteConfirm": "Löschen",
+    "deleteCancel": "Abbrechen"
+  },
+  "messages": {
+    "budgetEntryAdded": "Budgeteintrag erfolgreich hinzugefügt",
+    "budgetEntryUpdated": "Budgeteintrag erfolgreich aktualisiert",
+    "budgetEntryDeleted": "Budgeteintrag erfolgreich gelöscht",
+    "noBudgetEntries": "Keine Budgeteinträge gefunden",
+    "addFirstEntry": "Fügen Sie Ihren ersten Budgeteintrag hinzu, um zu beginnen",
+    "error": "Fehler",
+    "saveError": "Eintrag konnte nicht gespeichert werden: {{error}}"
+  },
+  "stats": {
+    "totalBudget": "Gesamtbudget",
+    "spent": "Ausgegeben",
+    "remaining": "Verbleibend",
+    "overspent": "Überschreitung",
+    "status": "Status",
+    "allGood": "Alles in Ordnung",
+    "categoriesOver": "überschritten",
+    "withinBudget": "Im Budget",
+    "needToCut": "Ausgaben reduzieren",
+    "categories": "Kategorie",
+    "ofBudget": "vom Budget"
+  },
+  "charts": {
+    "budgetVsActual": "Budget vs Tatsächliche Ausgaben",
+    "distribution": "Budgetverteilung nach Kategorien",
+    "deviations": "Budgetabweichungen (%)",
+    "budget": "Budget",
+    "actual": "Tatsächlich",
+    "deviation": "Abweichung",
+    "deviationLabel": "Abweichung (%)"
+  },
+  "tabs": {
+    "overview": "Übersicht",
+    "analytics": "Analytik",
+    "list": "Liste"
+  },
+  "card": {
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "nextDate": "Nächstes Datum",
+    "dayOfMonth": "{{day}}. des Monats",
+    "of": "von",
+    "edit": "Bearbeiten",
+    "delete": "Löschen"
+  },
+  "addBudgetEntryShort": "Hinzufügen",
+  "budgetLoading": "Budget wird geladen..."
+}

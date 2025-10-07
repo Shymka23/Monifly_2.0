@@ -1,0 +1,57 @@
+{
+  "title": "Dashboard",
+  "subtitle": "Manage your finances effectively",
+  "periodAnalysis": "Period Analysis",
+  "periods": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "thisWeek": "This Week",
+    "lastWeek": "Last Week",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "thisYear": "This Year",
+    "lastYear": "Last Year",
+    "custom": "Custom Period",
+    "currentMonth": "Current Month",
+    "currentYear": "Current Year",
+    "currentQuarter": "Current Quarter",
+    "lastQuarter": "Last Quarter"
+  },
+  "charts": {
+    "fundsFlow": "Funds Flow ({{period}})",
+    "fundsFlowDescription": "Income, expenses and balance change. Click on point for details.",
+    "income": "Income",
+    "expenses": "Expenses",
+    "balance": "Balance",
+    "expensesByCategory": "Expenses by Category",
+    "expensesByCategoryDescription": "Expenses in category \"{{category}}\" for {{period}}, {{currency}}.",
+    "walletDistribution": "Wallet Distribution",
+    "walletDistributionDescription": "Total balance in {{currency}}",
+    "noData": "No data",
+    "noExpensesData": "No expenses data",
+    "noWalletData": "No wallet data",
+    "periodInCurrency": "{{period}} in {{currency}}"
+  },
+  "wallet": {
+    "showAll": "Show All",
+    "noWallets": "No wallets",
+    "noWalletsDescription": "Create your first wallet to track finances",
+    "transactions": "Transactions",
+    "operationsDescription": "Operations for wallet \"{{wallet}}\" for {{period}}.",
+    "dailyTransactions": "Daily Transactions"
+  },
+  "reports": {
+    "title": "Reports",
+    "description": "Create and export financial reports",
+    "exportOptions": "Export options (PDF/CSV) will be available here",
+    "create": "Create Report"
+  },
+  "overviewTotalBalance": "Total Balance",
+  "overviewTotalBalanceDescription": "In all wallets ({{currency}})",
+  "overviewIncome": "Income ({{period}})",
+  "overviewIncomeDescription": "In {{currency}}",
+  "overviewExpenses": "Expenses ({{period}})",
+  "overviewExpensesDescription": "In {{currency}}",
+  "overviewTransactions": "Transactions ({{period}})",
+  "overviewTransactionsDescription": "Total transactions for period"
+}

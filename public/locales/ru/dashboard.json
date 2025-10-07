@@ -1,0 +1,57 @@
+{
+  "title": "Панель управления",
+  "subtitle": "Управляйте финансами эффективно",
+  "periodAnalysis": "Анализ периода",
+  "periods": {
+    "today": "Сегодня",
+    "yesterday": "Вчера",
+    "thisWeek": "Эта неделя",
+    "lastWeek": "Прошлая неделя",
+    "thisMonth": "Этот месяц",
+    "lastMonth": "Прошлый месяц",
+    "thisYear": "Этот год",
+    "lastYear": "Прошлый год",
+    "custom": "Произвольный период",
+    "currentMonth": "Текущий месяц",
+    "currentYear": "Текущий год",
+    "currentQuarter": "Текущий квартал",
+    "lastQuarter": "Прошлый квартал"
+  },
+  "charts": {
+    "fundsFlow": "Динамика средств ({{period}})",
+    "fundsFlowDescription": "Доходы, расходы и изменение баланса. Нажмите на точку для деталей.",
+    "income": "Доходы",
+    "expenses": "Расходы",
+    "balance": "Баланс",
+    "expensesByCategory": "Расходы по категориям",
+    "expensesByCategoryDescription": "Расходы в категории \"{{category}}\" за {{period}}, {{currency}}.",
+    "walletDistribution": "Распределение по кошелькам",
+    "walletDistributionDescription": "Общий баланс в {{currency}}",
+    "noData": "Нет данных",
+    "noExpensesData": "Нет данных о расходах",
+    "noWalletData": "Нет данных о кошельках",
+    "periodInCurrency": "{{period}} в {{currency}}"
+  },
+  "wallet": {
+    "showAll": "Показать все",
+    "noWallets": "Нет кошельков",
+    "noWalletsDescription": "Создайте свой первый кошелек для отслеживания финансов",
+    "transactions": "Транзакции",
+    "operationsDescription": "Операции по кошельку \"{{wallet}}\" за {{period}}.",
+    "dailyTransactions": "Дневные транзакции"
+  },
+  "reports": {
+    "title": "Отчеты",
+    "description": "Создавайте и экспортируйте финансовые отчеты",
+    "exportOptions": "Опции экспорта (PDF/CSV) будут доступны здесь",
+    "create": "Создать отчет"
+  },
+  "overviewTotalBalance": "Общий баланс",
+  "overviewTotalBalanceDescription": "Во всех кошельках ({{currency}})",
+  "overviewIncome": "Доходы ({{period}})",
+  "overviewIncomeDescription": "В {{currency}}",
+  "overviewExpenses": "Расходы ({{period}})",
+  "overviewExpensesDescription": "В {{currency}}",
+  "overviewTransactions": "Транзакции ({{period}})",
+  "overviewTransactionsDescription": "Всего транзакций за период"
+}

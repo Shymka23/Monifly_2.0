@@ -1,0 +1,57 @@
+{
+  "title": "Панель управління",
+  "subtitle": "Керуйте фінансами ефективно",
+  "periodAnalysis": "Аналіз періоду",
+  "periods": {
+    "today": "Сьогодні",
+    "yesterday": "Вчора",
+    "thisWeek": "Цей тиждень",
+    "lastWeek": "Минулий тиждень",
+    "thisMonth": "Цей місяць",
+    "lastMonth": "Минулий місяць",
+    "thisYear": "Цей рік",
+    "lastYear": "Минулий рік",
+    "custom": "Довільний період",
+    "currentMonth": "Поточний місяць",
+    "currentYear": "Поточний рік",
+    "currentQuarter": "Поточний квартал",
+    "lastQuarter": "Минулий квартал"
+  },
+  "charts": {
+    "fundsFlow": "Динаміка коштів ({{period}})",
+    "fundsFlowDescription": "Доходи, витрати та зміна балансу. Натисніть на точку для деталей.",
+    "income": "Доходи",
+    "expenses": "Витрати",
+    "balance": "Баланс",
+    "expensesByCategory": "Витрати за категоріями",
+    "expensesByCategoryDescription": "Витрати в категорії \"{{category}}\" за {{period}}, {{currency}}.",
+    "walletDistribution": "Розподіл по гаманцях",
+    "walletDistributionDescription": "Загальний баланс в {{currency}}",
+    "noData": "Немає даних",
+    "noExpensesData": "Немає даних про витрати",
+    "noWalletData": "Немає даних про гаманці",
+    "periodInCurrency": "{{period}} в {{currency}}"
+  },
+  "wallet": {
+    "showAll": "Показати всі",
+    "noWallets": "Немає гаманців",
+    "noWalletsDescription": "Створіть свій перший гаманець для відстеження фінансів",
+    "transactions": "Транзакції",
+    "operationsDescription": "Операції по гаманцю \"{{wallet}}\" за {{period}}.",
+    "dailyTransactions": "Денні транзакції"
+  },
+  "reports": {
+    "title": "Звіти",
+    "description": "Створюйте та експортуйте фінансові звіти",
+    "exportOptions": "Опції експорту (PDF/CSV) будуть доступні тут",
+    "create": "Створити звіт"
+  },
+  "overviewTotalBalance": "Загальний баланс",
+  "overviewTotalBalanceDescription": "У всіх гаманцях ({{currency}})",
+  "overviewIncome": "Доходи ({{period}})",
+  "overviewIncomeDescription": "В {{currency}}",
+  "overviewExpenses": "Витрати ({{period}})",
+  "overviewExpensesDescription": "В {{currency}}",
+  "overviewTransactions": "Транзакції ({{period}})",
+  "overviewTransactionsDescription": "Всього транзакцій за період"
+}

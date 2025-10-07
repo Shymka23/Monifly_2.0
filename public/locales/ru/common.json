@@ -1,0 +1,94 @@
+{
+  "loading": "Загрузка...",
+  "validation": {
+    "required": "Это поле обязательно",
+    "invalidAmount": "Неверный формат суммы"
+  },
+  "buttons": {
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "save": "Сохранить",
+    "edit": "Редактировать",
+    "add": "Добавить"
+  },
+  "form": {
+    "walletName": "Название кошелька",
+    "currencyLabel": "Валюта",
+    "currencyPlaceholder": "Выберите валюту"
+  },
+  "categories": {
+    "other": "Другое",
+    "food": "Еда",
+    "housing": "Жилье",
+    "salary": "Зарплата",
+    "healthcare": "Здоровье",
+    "investment": "Инвестиции",
+    "utilities": "Коммунальные услуги",
+    "crypto": "Криптовалюта",
+    "education": "Образование",
+    "debtpayment": "Платеж по долгу",
+    "gifts": "Подарки",
+    "shopping": "Покупки",
+    "travel": "Путешествия",
+    "entertainment": "Развлечения",
+    "transport": "Транспорт"
+  },
+  "transaction": {
+    "title": "Транзакции",
+    "recentTransactions": "Последние транзакции",
+    "recentTransactionsWithPeriod": "Транзакции за {{period}}",
+    "recentTransactionsForWallet": "Транзакции по кошельку",
+    "date": "Дата",
+    "description": "Описание",
+    "category": "Категория",
+    "amount": "Сумма",
+    "noTransactions": "Нет транзакций за этот период",
+    "categories": {
+      "food": "Еда",
+      "transport": "Транспорт",
+      "housing": "Жилье",
+      "utilities": "Коммунальные услуги",
+      "entertainment": "Развлечения",
+      "healthcare": "Здоровье",
+      "education": "Образование",
+      "salary": "Зарплата",
+      "gifts": "Подарки",
+      "investment": "Инвестиции",
+      "crypto": "Криптовалюта",
+      "shopping": "Покупки",
+      "travel": "Путешествия",
+      "debtpayment": "Платеж по долгу",
+      "other": "Другое"
+    }
+  },
+  "labels": {
+    "period": "Период",
+    "walletsTitle": "Мои кошельки",
+    "inCurrency": "в {{currency}}"
+  },
+  "user": {
+    "avatarAlt": "Аватар пользователя",
+    "defaultName": "Пользователь",
+    "defaultUsername": "пользователь"
+  },
+  "navigation": {
+    "dashboard": "Панель управления",
+    "budgeting": "Бюджетирование",
+    "lifeGoals": "Жизненные цели",
+    "debts": "Долги",
+    "aiAssistant": "AI Помощник",
+    "crypto": "Крипто",
+    "investment": "Инвестиции",
+    "settings": "Настройки",
+    "menu": "Меню"
+  },
+  "theme": {
+    "light": "Светлая тема",
+    "dark": "Темная тема"
+  },
+  "app": {
+    "title": "Monifly - Умное управление финансами",
+    "description": "Возьмите под контроль свои финансы с Monifly. Отслеживайте расходы, управляйте кошельками и получайте советы по бюджетированию на базе ИИ.",
+    "slogan": "Управляйте своими деньгами умно"
+  }
+}

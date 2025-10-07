@@ -1,0 +1,16 @@
+{
+  "add": "Add wallet",
+  "addTitle": "Add new wallet",
+  "addDescription": "Create a new wallet to track your finances",
+  "iconLabel": "Icon",
+  "nameLabel": "Wallet name",
+  "namePlaceholder": "e.g., Savings account",
+  "colorLabel": "Color",
+  "currencyLabel": "Currency",
+  "currencyPlaceholder": "Select currency",
+  "initialBalanceLabel": "Initial balance",
+  "initialBalancePlaceholder": "e.g., 1000",
+  "cancel": "Cancel",
+  "added": "Wallet added",
+  "addedDescription": "Wallet \"{{name}}\" has been successfully created"
+}

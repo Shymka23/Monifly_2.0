@@ -1,0 +1,52 @@
+{
+  "debtsTitle": "Gestión de Deudas",
+  "debtsManageDescription": "Rastrea y gestiona tus deudas de manera efectiva",
+  "sections": {
+    "myDebts": "Mis Deudas",
+    "myDebtsShort": "Debo",
+    "myDebtsDescription": "Lista de personas u organizaciones a las que debes",
+    "debtsToMe": "Deudas a Mí",
+    "debtsToMeShort": "Me Deben",
+    "debtsToMeDescription": "Lista de personas u organizaciones que te deben"
+  },
+  "empty": {
+    "myDebts": "No tienes deudas activas",
+    "myDebtsDescription": "¡Todas tus obligaciones están cumplidas!",
+    "debtsToMe": "Nadie te debe",
+    "debtsToMeDescription": "¡Todas las deudas han sido devueltas!"
+  },
+  "actions": {
+    "addDebt": "Agregar Deuda",
+    "editDebt": "Editar Deuda",
+    "deleteDebt": "Eliminar Deuda",
+    "recordPayment": "Registrar Pago"
+  },
+
+  "addDebt": "Agregar Deuda",
+  "iOwe": "Debo",
+  "owedToMe": "Me Deben",
+  "myCurrentDebts": "Mis Deudas Actuales",
+  "myDebtsDescription": "No tienes deudas activas",
+  "allDebtsPaid": "¡Todas tus obligaciones están cumplidas!",
+  "types": {
+    "creditCard": "Credit Card",
+    "loan": "Loan",
+    "mortgage": "Mortgage",
+    "personalLoan": "Personal Loan",
+    "other": "Other"
+  },
+  "status": {
+    "active": "Active",
+    "paid": "Paid Off",
+    "overdue": "Overdue"
+  },
+  "messages": {
+    "debtAdded": "Debt added successfully",
+    "debtUpdated": "Debt updated successfully",
+    "debtDeleted": "Debt deleted successfully",
+    "paymentRecorded": "Payment recorded successfully",
+    "debtPaidOff": "Congratulations! Debt paid off!",
+    "noDebts": "No debts found",
+    "addFirstDebt": "Add your first debt to track"
+  }
+}

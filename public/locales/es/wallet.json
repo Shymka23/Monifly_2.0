@@ -1,0 +1,16 @@
+{
+  "add": "Añadir cartera",
+  "addTitle": "Añadir nueva cartera",
+  "addDescription": "Cree una nueva cartera para rastrear sus finanzas",
+  "iconLabel": "Icono",
+  "nameLabel": "Nombre de la cartera",
+  "namePlaceholder": "por ejemplo, Cuenta de ahorros",
+  "colorLabel": "Color",
+  "currencyLabel": "Moneda",
+  "currencyPlaceholder": "Seleccionar moneda",
+  "initialBalanceLabel": "Saldo inicial",
+  "initialBalancePlaceholder": "por ejemplo, 1000",
+  "cancel": "Cancelar",
+  "added": "Cartera añadida",
+  "addedDescription": "La cartera \"{{name}}\" se ha creado con éxito"
+}

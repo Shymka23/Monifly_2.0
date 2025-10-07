@@ -1,0 +1,52 @@
+{
+  "debtsTitle": "Управление долгами",
+  "debtsManageDescription": "Отслеживайте и управляйте своими долгами эффективно",
+  "sections": {
+    "myDebts": "Мои долги",
+    "myDebtsShort": "Я должен",
+    "myDebtsDescription": "Список людей или организаций, которым вы должны",
+    "debtsToMe": "Долги мне",
+    "debtsToMeShort": "Мне должны",
+    "debtsToMeDescription": "Список людей или организаций, которые должны вам"
+  },
+  "empty": {
+    "myDebts": "У вас нет активных долгов",
+    "myDebtsDescription": "Все ваши обязательства выполнены!",
+    "debtsToMe": "Вам никто не должен",
+    "debtsToMeDescription": "Все долги возвращены!"
+  },
+  "actions": {
+    "addDebt": "Добавить долг",
+    "editDebt": "Редактировать долг",
+    "deleteDebt": "Удалить долг",
+    "recordPayment": "Записать платеж"
+  },
+
+  "addDebt": "Добавить долг",
+  "iOwe": "Я должен",
+  "owedToMe": "Мне должны",
+  "myCurrentDebts": "Мои текущие долги",
+  "myDebtsDescription": "У вас нет активных долгов",
+  "allDebtsPaid": "Все ваши обязательства выполнены!",
+  "types": {
+    "creditCard": "Кредитная карта",
+    "loan": "Кредит",
+    "mortgage": "Ипотека",
+    "personalLoan": "Личный кредит",
+    "other": "Прочее"
+  },
+  "status": {
+    "active": "Активный",
+    "paid": "Погашен",
+    "overdue": "Просрочен"
+  },
+  "messages": {
+    "debtAdded": "Долг успешно добавлен",
+    "debtUpdated": "Долг успешно обновлен",
+    "debtDeleted": "Долг успешно удален",
+    "paymentRecorded": "Платеж успешно записан",
+    "debtPaidOff": "Поздравляем! Долг погашен!",
+    "noDebts": "Долги не найдены",
+    "addFirstDebt": "Добавьте свой первый долг для отслеживания"
+  }
+}

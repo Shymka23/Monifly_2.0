@@ -1,0 +1,109 @@
+{
+  "title": "Settings",
+  "subtitle": "Manage your account and application preferences",
+  "personal": {
+    "title": "Personal information",
+    "description": "Update your profile details",
+    "changeAvatarButton": "Change avatar",
+    "removeAvatarButton": "Remove avatar",
+    "saveChangesButton": "Save changes",
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "emailLabel": "Email"
+  },
+  "notifications": {
+    "title": "Notification settings",
+    "description": "Manage notifications and messages",
+    "all": "All notifications",
+    "allDesc": "Enable or disable all notifications",
+    "email": "Email notifications",
+    "emailDesc": "Receive notifications by email",
+    "push": "Push notifications",
+    "pushDesc": "Receive notifications in the browser",
+    "marketing": "Marketing emails",
+    "marketingDesc": "Receive news and offers"
+  },
+  "security": {
+    "title": "Security settings",
+    "description": "Manage your account security",
+    "autoBackup": "Automatic backups",
+    "autoBackupDesc": "Automatically save data to the cloud",
+    "dataRetention": "Data retention",
+    "dataRetention_6_months": "6 months",
+    "dataRetention_1_year": "1 year",
+    "dataRetention_2_years": "2 years",
+    "dataRetention_forever": "Forever",
+    "sessionTimeout": "Session timeout",
+    "timeout_15_min": "15 minutes",
+    "timeout_30_min": "30 minutes",
+    "timeout_1_hour": "1 hour",
+    "timeout_4_hours": "4 hours",
+    "timeout_never": "Never"
+  },
+  "display": {
+    "title": "Display settings",
+    "description": "Personalize how data is displayed",
+    "language": "Interface language",
+    "currency": "Currency display",
+    "currencyPrimary": "Primary currency",
+    "currencyAll": "All currencies",
+    "currencyConverted": "Converted to primary",
+    "dateFormat": "Date format",
+    "timeFormat": "Time format",
+    "time24": "24-hour",
+    "time12": "12-hour"
+  },
+  "quickActions": {
+    "title": "Quick actions",
+    "description": "Frequently used settings",
+    "editProfile": "Edit profile",
+    "exportData": "Export data",
+    "changePassword": "Change password"
+  },
+  "subscription": {
+    "title": "Subscription management",
+    "description": "Your current plan and options",
+    "currentPlan": "Current plan",
+    "nextPaymentDate": "Next payment date",
+    "upgradeYearly": "Pro yearly (50 EUR/year)",
+    "bestValue": "Best value",
+    "upgradeMonthly": "Pro monthly (5 EUR/month)",
+    "cancel": "Cancel subscription",
+    "dialog": {
+      "monthlyTitle": "Confirm monthly subscription",
+      "monthlyDescription": "You are about to subscribe to Monifly Pro for 5 EUR per month. You can cancel at any time.",
+      "monthlyAction": "Pay 5 EUR",
+      "yearlyTitle": "Confirm yearly subscription",
+      "yearlyDescription": "You are about to subscribe to Monifly Pro for 50 EUR per year. You can cancel at any time.",
+      "yearlyAction": "Pay 50 EUR",
+      "cancelTitle": "Cancel subscription?",
+      "cancelDescription": "Are you sure you want to cancel the subscription? You will lose access to Pro features at the end of the current period.",
+      "cancelAction": "Yes, cancel"
+    }
+  },
+  "accountSettings": {
+    "title": "Account settings",
+    "description": "Security and account actions",
+    "twoFactorAuthLabel": "Two-factor authentication",
+    "twoFactorAuthDescription": "Additional protection for your account",
+    "twoFactorAuthEnabledToast": "Two-factor authentication enabled",
+    "twoFactorAuthDisabledToast": "Two-factor authentication disabled",
+    "changePasswordButton": "Change password",
+    "exportDataButton": "Export data",
+    "deleteAccountButton": "Delete account",
+    "dangerZone": "Danger zone",
+    "dangerZoneDesc": "These actions cannot be undone"
+  },
+  "accountInfo": {
+    "title": "Account information",
+    "description": "Details of your account and activity",
+    "registrationDate": "Registration date",
+    "emailVerified": "Email verified",
+    "yes": "Yes",
+    "lastLogin": "Last login",
+    "interfaceLanguage": "Interface language",
+    "usageStats": "Usage statistics",
+    "transactions": "Transactions",
+    "goals": "Goals"
+  }
+}

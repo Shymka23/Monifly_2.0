@@ -1,0 +1,57 @@
+{
+  "title": "Panel de Control",
+  "subtitle": "Gestione sus finanzas de manera efectiva",
+  "periodAnalysis": "Análisis de Período",
+  "periods": {
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "thisWeek": "Esta Semana",
+    "lastWeek": "Semana Pasada",
+    "thisMonth": "Este Mes",
+    "lastMonth": "Mes Pasado",
+    "thisYear": "Este Año",
+    "lastYear": "Año Pasado",
+    "custom": "Período Personalizado",
+    "currentMonth": "Mes Actual",
+    "currentYear": "Año Actual",
+    "currentQuarter": "Trimestre Actual",
+    "lastQuarter": "Trimestre Pasado"
+  },
+  "charts": {
+    "fundsFlow": "Flujo de Fondos ({{period}})",
+    "fundsFlowDescription": "Ingresos, gastos y cambio de balance. Haga clic en el punto para detalles.",
+    "income": "Ingresos",
+    "expenses": "Gastos",
+    "balance": "Balance",
+    "expensesByCategory": "Gastos por Categoría",
+    "expensesByCategoryDescription": "Gastos en la categoría \"{{category}}\" para {{period}}, {{currency}}.",
+    "walletDistribution": "Distribución de Carteras",
+    "walletDistributionDescription": "Balance total en {{currency}}",
+    "noData": "Sin datos",
+    "noExpensesData": "Sin datos de gastos",
+    "noWalletData": "Sin datos de carteras",
+    "periodInCurrency": "{{period}} en {{currency}}"
+  },
+  "wallet": {
+    "showAll": "Mostrar Todo",
+    "noWallets": "Sin carteras",
+    "noWalletsDescription": "Cree su primera cartera para rastrear finanzas",
+    "transactions": "Transacciones",
+    "operationsDescription": "Operaciones para cartera \"{{wallet}}\" para {{period}}.",
+    "dailyTransactions": "Transacciones Diarias"
+  },
+  "reports": {
+    "title": "Informes",
+    "description": "Cree y exporte informes financieros",
+    "exportOptions": "Las opciones de exportación (PDF/CSV) estarán disponibles aquí",
+    "create": "Crear Informe"
+  },
+  "overviewTotalBalance": "Balance Total",
+  "overviewTotalBalanceDescription": "En todas las carteras ({{currency}})",
+  "overviewIncome": "Ingresos ({{period}})",
+  "overviewIncomeDescription": "En {{currency}}",
+  "overviewExpenses": "Gastos ({{period}})",
+  "overviewExpensesDescription": "En {{currency}}",
+  "overviewTransactions": "Transacciones ({{period}})",
+  "overviewTransactionsDescription": "Total de transacciones para el período"
+}

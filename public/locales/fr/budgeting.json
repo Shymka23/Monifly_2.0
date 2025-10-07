@@ -1,0 +1,148 @@
+{
+  "title": "Budgétisation et Plans",
+  "subtitle": "Planifiez et suivez votre budget efficacement",
+  "budgetingPlanning": "Planification Budgétaire",
+  "budgetingPlanningDescription": "Créez et gérez vos plans budgétaires",
+  "addBudgetEntry": "Ajouter une Entrée Budgétaire",
+  "dialog": {
+    "title": "Nouvelle Entrée Budgétaire",
+    "description": "Ajoutez une nouvelle entrée budgétaire régulière ou unique.",
+
+    "description_label": "Description",
+    "description_placeholder": "Par exemple, Loyer d'Appartement, Salaire",
+    "description_required": "La description est obligatoire",
+    "amount_label": "Montant",
+    "amount_placeholder": "Par exemple, 50000",
+    "amount_required": "Le montant est obligatoire",
+    "currency_label": "Devise",
+    "currency_required": "La devise est obligatoire",
+    "type_label": "Type",
+    "type_income": "Revenu",
+    "type_expense": "Dépense",
+    "type_required": "Le type est obligatoire",
+    "category_label": "Catégorie",
+    "category_required": "La catégorie est obligatoire",
+    "frequency_label": "Fréquence",
+    "frequency_required": "La fréquence est obligatoire",
+    "start_date_label": "Date de Début",
+    "start_date_required": "La date de début est obligatoire",
+    "month_day_label": "Jour du Mois",
+    "month_day_required": "Le jour du mois est obligatoire",
+    "limit_label": "Limite (optionnel)",
+    "limit_placeholder": "Par exemple, 10000",
+    "submit": "Ajouter l'Entrée"
+  },
+  "sections": {
+    "monthlyBudgets": "Budgets par Catégorie (Mensuel)",
+    "monthlyBudgetsShort": "Budgets Mensuels",
+    "monthlyBudgetsDescription": "Suivez les dépenses mensuelles par catégorie avec des limites définies. Progression affichée pour le mois en cours.",
+    "plannedOperations": "Revenus Planifiés et Dépenses Ponctuelles",
+    "plannedOperationsShort": "Opérations Planifiées",
+    "plannedOperationsDescription": "Aperçu des opérations financières futures ou ponctuelles.",
+    "savingGoals": "Objectifs d'Épargne Actifs",
+    "savingGoalsShort": "Objectifs d'Épargne",
+    "savingGoalsDescription": "Aperçu rapide de vos objectifs actuels. Gérez-les dans la section 'Objectifs Financiers'."
+  },
+  "overview": {
+    "totalBudget": "Budget Total",
+    "spent": "Dépensé",
+    "remaining": "Restant",
+    "plannedExpenses": "Dépenses Planifiées",
+    "actualExpenses": "Dépenses Réelles",
+    "overspent": "Dépassé",
+    "overspentBy": "Dépassé de",
+    "nearLimit": "Proche de la limite"
+  },
+  "categories": {
+    "food": "Alimentation",
+    "transport": "Transport",
+    "entertainment": "Divertissement",
+    "utilities": "Services Publics",
+    "healthcare": "Santé",
+    "education": "Éducation",
+    "shopping": "Shopping",
+    "other": "Autre"
+  },
+  "actions": {
+    "addBudgetEntry": "Ajouter une Entrée Budgétaire",
+    "editBudgetEntry": "Modifier une Entrée Budgétaire",
+    "deleteBudgetEntry": "Supprimer une Entrée Budgétaire",
+    "createBudgetPlan": "Créer un Plan Budgétaire"
+  },
+  "periods": {
+    "monthly": "Mensuel",
+    "weekly": "Hebdomadaire",
+    "yearly": "Annuel",
+    "once": "Une fois"
+  },
+  "status": {
+    "onTrack": "Dans le Budget",
+    "overBudget": "Dépassement de Budget",
+    "underBudget": "Sous le Budget"
+  },
+  "empty": {
+    "monthlyBudgets": "Pas encore de budgets mensuels ajoutés",
+    "monthlyBudgetsDescription": "Ajoutez une entrée de dépense avec une fréquence 'Mensuelle' et spécifiez une limite.",
+    "budgetEntries": "Pas encore d'entrées budgétaires",
+    "budgetEntriesDescription": "Commencez à planifier vos revenus et dépenses en ajoutant votre première entrée.",
+    "createFirst": "Créer le premier budget"
+  },
+
+  "budgetEntries": "Entrées Budgétaires",
+  "budgetEntriesDescription": "Planifiez et suivez vos revenus et dépenses",
+  "notifications": {
+    "editTitle": "Modifier",
+    "editDescription": "Pour modifier, allez dans la section 'Objectifs Financiers'",
+    "deleteTitle": "Supprimer",
+    "deleteDescription": "Êtes-vous sûr de vouloir supprimer cet objectif ?",
+    "deleteConfirm": "Supprimer",
+    "deleteCancel": "Annuler"
+  },
+  "messages": {
+    "budgetEntryAdded": "Entrée budgétaire ajoutée avec succès",
+    "budgetEntryUpdated": "Entrée budgétaire mise à jour avec succès",
+    "budgetEntryDeleted": "Entrée budgétaire supprimée avec succès",
+    "noBudgetEntries": "Aucune entrée budgétaire trouvée",
+    "addFirstEntry": "Ajoutez votre première entrée budgétaire pour commencer",
+    "error": "Erreur",
+    "saveError": "Impossible d'enregistrer l'entrée: {{error}}"
+  },
+  "stats": {
+    "totalBudget": "Budget Total",
+    "spent": "Dépensé",
+    "remaining": "Restant",
+    "overspent": "Dépassement",
+    "status": "Statut",
+    "allGood": "Tout va bien",
+    "categoriesOver": "dépassé",
+    "withinBudget": "Dans le budget",
+    "needToCut": "Besoin de réduire les dépenses",
+    "categories": "catégorie",
+    "ofBudget": "du budget"
+  },
+  "charts": {
+    "budgetVsActual": "Budget vs Dépenses Réelles",
+    "distribution": "Répartition du budget par catégories",
+    "deviations": "Écarts budgétaires (%)",
+    "budget": "Budget",
+    "actual": "Réel",
+    "deviation": "Écart",
+    "deviationLabel": "Écart (%)"
+  },
+  "tabs": {
+    "overview": "Aperçu",
+    "analytics": "Analytique",
+    "list": "Liste"
+  },
+  "card": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "nextDate": "Prochaine date",
+    "dayOfMonth": "{{day}} du mois",
+    "of": "de",
+    "edit": "Éditer",
+    "delete": "Supprimer"
+  },
+  "addBudgetEntryShort": "Ajouter",
+  "budgetLoading": "Chargement du budget..."
+}

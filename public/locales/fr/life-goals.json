@@ -1,0 +1,177 @@
+{
+  "title": "Objectifs de Vie",
+  "subtitle": "Créez, suivez et atteignez vos aspirations de vie. Planifiez des événements importants.",
+
+  "sections": {
+    "goals": "Objectifs",
+    "goalsDescription": "Créez et gérez vos objectifs de vie",
+    "calendar": "Calendrier de Vie"
+  },
+
+  "goals": {
+    "title": "Objectifs",
+    "description": "Créez et gérez vos objectifs de vie",
+    "placeholder": "Entrez votre objectif",
+    "career": {
+      "title": "Objectifs de Carrière",
+      "add": "Ajouter un Objectif de Carrière",
+      "label": "Objectif de Carrière",
+      "placeholder": "Décrivez votre aspiration professionnelle",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    }
+  },
+
+  "calendar": {
+    "yearLabel": "{{year}}: Âge {{age}}",
+    "description": "Votre voyage dans la vie, marqué par des jalons et des souvenirs",
+    "empty": {
+      "title": "Calendrier Vide",
+      "description": "Commencez à planifier votre vie en ajoutant le premier jalon",
+      "addFirst": "Ajouter Premier Jalon"
+    }
+  },
+
+  "yearLabel": "{{year}}: Âge {{age}}",
+  "empty": {
+    "description": "Commencez à planifier votre vie en ajoutant le premier jalon"
+  },
+
+  "milestoneProgress": {
+    "home": "Maison",
+    "progress": "{{percentage}}% accompli"
+  },
+
+  "assetAllocation": {
+    "title": "Allocation d'Actifs",
+    "description": "Diversifiez vos investissements entre différentes classes d'actifs",
+    "stocks": "Actions",
+    "bonds": "Obligations",
+    "realEstate": "Immobilier",
+    "cash": "Liquidités"
+  },
+
+  "inflation": {
+    "title": "Ajustement de l'Inflation",
+    "description": "Protégez vos objectifs financiers de l'impact destructeur de l'inflation"
+  },
+
+  "buttons": {
+    "title": "Actions",
+    "description": "Gérez et suivez vos objectifs de vie"
+  },
+
+  "loading": "Chargement...",
+
+  "futureVision": {
+    "title": "Vision Future",
+    "description": "Définissez votre vision de vie à long terme et vos aspirations"
+  },
+
+  "addMilestone": "Ajouter Jalon",
+  "addFinancialGoal": "Ajouter Objectif Financier",
+
+  "milestone": {
+    "title": "Titre du Jalon",
+    "titlePlaceholder": "Entrez le titre du jalon",
+    "category": "Catégorie",
+    "selectCategory": "Sélectionner la catégorie"
+  },
+
+  "categories": {
+    "career": "Carrière",
+    "family": "Famille",
+    "health": "Santé",
+    "education": "Éducation",
+    "travel": "Voyages",
+    "other": "Autre"
+  },
+
+  "reminders": {
+    "title": "Rappels",
+    "titlePlaceholder": "Titre du rappel",
+    "date": "Date",
+    "selectDate": "Sélectionner la date",
+    "frequency": "Fréquence",
+    "once": "Une fois",
+    "daily": "Quotidien",
+    "weekly": "Hebdomadaire",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "priority": "Priorité",
+    "description": "Description",
+    "descriptionPlaceholder": "Décrire le rappel",
+    "addReminder": "Ajouter Rappel",
+    "list": "Liste des Rappels",
+    "count": "rappels"
+  },
+
+  "priorities": {
+    "low": "Faible",
+    "medium": "Moyen",
+    "high": "Élevé"
+  },
+
+  "financialGoals": {
+    "title": "Titre de l'Objectif",
+    "titlePlaceholder": "Entrez le titre de l'objectif financier",
+    "type": "Type",
+    "selectType": "Sélectionner le type",
+    "income": "Revenus",
+    "expense": "Dépenses",
+    "investment": "Investissement",
+    "saving": "Épargne",
+    "description": "Description",
+    "descriptionPlaceholder": "Décrire l'objectif financier",
+    "currentAmount": "Montant Actuel",
+    "targetAmount": "Montant Cible",
+    "targetDate": "Date Cible",
+    "selectDate": "Sélectionner la date",
+    "monthlyContribution": "Contribution Mensuelle",
+    "suggestedContribution": "Contribution Suggérée",
+    "perMonth": "par mois",
+    "suggestedDescription": "Montant recommandé pour atteindre l'objectif",
+    "isRecurring": "Objectif Récurrent",
+    "additionalInfo": "Informations Supplémentaires",
+    "monthlyIncome": "Revenus Mensuels",
+    "monthlyExpenses": "Dépenses Mensuelles",
+    "amount": "Montant",
+    "edit": "Modifier l'Objectif Financier",
+    "empty": "Aucun objectif financier"
+  },
+
+  "milestones": {
+    "title": "Jalons Personnels",
+    "empty": "Aucun jalon personnel",
+    "edit": "Modifier le Jalon"
+  },
+
+  "progress": {
+    "title": "Progrès",
+    "milestones": "Jalons",
+    "completed": "Terminé",
+    "financialGoals": "Objectifs Financiers"
+  },
+
+  "status": {
+    "active": "Actif",
+    "completed": "Terminé",
+    "paused": "En Pause"
+  },
+
+  "confirmations": {
+    "deleteMilestone": "Êtes-vous sûr de vouloir supprimer ce jalon ?",
+    "deleteGoal": "Êtes-vous sûr de vouloir supprimer cet objectif ?"
+  },
+
+  "noData": {
+    "title": "Aucune Donnée",
+    "description": "Ajouter des objectifs pour cette année"
+  },
+
+  "common": {
+    "cancel": "Annuler",
+    "add": "Ajouter",
+    "save": "Sauvegarder"
+  }
+}

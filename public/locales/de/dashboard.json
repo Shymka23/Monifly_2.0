@@ -1,0 +1,57 @@
+{
+  "title": "Dashboard",
+  "subtitle": "Verwalten Sie Ihre Finanzen effektiv",
+  "periodAnalysis": "Periodenanalyse",
+  "periods": {
+    "today": "Heute",
+    "yesterday": "Gestern",
+    "thisWeek": "Diese Woche",
+    "lastWeek": "Letzte Woche",
+    "thisMonth": "Dieser Monat",
+    "lastMonth": "Letzter Monat",
+    "thisYear": "Dieses Jahr",
+    "lastYear": "Letztes Jahr",
+    "custom": "Benutzerdefinierter Zeitraum",
+    "currentMonth": "Aktueller Monat",
+    "currentYear": "Aktuelles Jahr",
+    "currentQuarter": "Aktuelles Quartal",
+    "lastQuarter": "Letztes Quartal"
+  },
+  "charts": {
+    "fundsFlow": "Geldfluss ({{period}})",
+    "fundsFlowDescription": "Einnahmen, Ausgaben und Bilanzänderung. Klicken Sie auf den Punkt für Details.",
+    "income": "Einnahmen",
+    "expenses": "Ausgaben",
+    "balance": "Bilanz",
+    "expensesByCategory": "Ausgaben nach Kategorie",
+    "expensesByCategoryDescription": "Ausgaben in der Kategorie \"{{category}}\" für {{period}}, {{currency}}.",
+    "walletDistribution": "Geldbörsenverteilung",
+    "walletDistributionDescription": "Gesamtbilanz in {{currency}}",
+    "noData": "Keine Daten",
+    "noExpensesData": "Keine Ausgabendaten",
+    "noWalletData": "Keine Geldbörsen-Daten",
+    "periodInCurrency": "{{period}} in {{currency}}"
+  },
+  "wallet": {
+    "showAll": "Alle anzeigen",
+    "noWallets": "Keine Geldbörsen",
+    "noWalletsDescription": "Erstellen Sie Ihre erste Geldbörse, um Finanzen zu verfolgen",
+    "transactions": "Transaktionen",
+    "operationsDescription": "Operationen für Geldbörse \"{{wallet}}\" für {{period}}.",
+    "dailyTransactions": "Tägliche Transaktionen"
+  },
+  "reports": {
+    "title": "Berichte",
+    "description": "Erstellen und exportieren Sie Finanzberichte",
+    "exportOptions": "Exportoptionen (PDF/CSV) werden hier verfügbar sein",
+    "create": "Bericht erstellen"
+  },
+  "overviewTotalBalance": "Gesamtbilanz",
+  "overviewTotalBalanceDescription": "In allen Geldbörsen ({{currency}})",
+  "overviewIncome": "Einnahmen ({{period}})",
+  "overviewIncomeDescription": "In {{currency}}",
+  "overviewExpenses": "Ausgaben ({{period}})",
+  "overviewExpensesDescription": "In {{currency}}",
+  "overviewTransactions": "Transaktionen ({{period}})",
+  "overviewTransactionsDescription": "Gesamttransaktionen für den Zeitraum"
+}

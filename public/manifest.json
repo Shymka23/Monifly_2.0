@@ -1,0 +1,23 @@
+{
+  "name": "Monifly - Умное управление финансами",
+  "short_name": "Monifly",
+  "description": "Возьмите под контроль свои финансы с Monifly. Отслеживайте расходы, управляйте кошельками и получайте советы по бюджетированию на базе ИИ.",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00B3B3",
+  "background_color": "#21242B",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+м

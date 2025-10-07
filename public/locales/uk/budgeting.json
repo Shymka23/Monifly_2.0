@@ -1,0 +1,165 @@
+{
+  "title": "Бюджетування та Плани",
+  "subtitle": "Плануйте та відстежуйте свій бюджет ефективно",
+  "budgetingPlanning": "Планування бюджету",
+  "budgetingPlanningDescription": "Створіть та керуйте вашими бюджетними планами",
+  "addBudgetEntry": "Додати запис бюджету",
+  "dialog": {
+    "title": "Новий бюджетний запис",
+    "description": "Додайте новий регулярний або одноразовий бюджетний запис.",
+    "edit_title": "Редагувати бюджетний запис",
+    "edit_description": "Оновіть деталі бюджетного запису.",
+    "description_label": "Опис",
+    "description_placeholder": "Наприклад, Оренда квартири, Зарплата",
+    "description_required": "Опис є обов'язковим",
+    "amount_label": "Сума",
+    "amount_placeholder": "Наприклад, 50000",
+    "amount_required": "Сума є обов'язковою",
+    "currency_label": "Валюта",
+    "currency_placeholder": "Оберіть валюту",
+    "currency_required": "Валюта є обов'язковою",
+    "type_label": "Тип",
+    "type_income": "Дохід",
+    "type_expense": "Витрата",
+    "type_required": "Тип є обов'язковим",
+    "category_label": "Категорія",
+    "category_placeholder": "Оберіть категорію",
+    "category_required": "Категорія є обов'язковою",
+    "frequency_label": "Частота",
+    "frequency_placeholder": "Оберіть частоту",
+    "frequency_required": "Частота є обов'язковою",
+    "start_date_label": "Дата початку",
+    "start_date_placeholder": "Оберіть дату",
+    "start_date_required": "Дата початку є обов'язковою",
+    "month_day_label": "День місяця",
+    "month_day_required": "День місяця є обов'язковим",
+    "limit_label": "Ліміт (необов'язково)",
+    "limit_placeholder": "Наприклад, 10000",
+    "saving": "Збереження...",
+    "submit": "Додати запис",
+    "update": "Оновити запис"
+  },
+  "validation": {
+    "description_min": "Опис має містити принаймні 2 символи",
+    "description_max": "Опис не може перевищувати 100 символів",
+    "amount_invalid": "Введіть коректну суму",
+    "amount_positive": "Сума має бути більше 0",
+    "amount_decimals": "Максимум 2 знаки після коми",
+    "limit_invalid": "Введіть коректну суму ліміту",
+    "limit_positive": "Ліміт має бути більше 0",
+    "day_range": "День має бути від 1 до 31"
+  },
+  "sections": {
+    "monthlyBudgets": "Бюджети по категоріям (Щомісячно)",
+    "monthlyBudgetsShort": "Щомісячні бюджети",
+    "monthlyBudgetsDescription": "Відстежуйте щомісячні витрати по категоріях з встановленими лімітами. Прогрес показано за поточний місяць.",
+    "plannedOperations": "Заплановані доходи та разові витрати",
+    "plannedOperationsShort": "Заплановані операції",
+    "plannedOperationsDescription": "Огляд майбутніх або одноразових фінансових операцій.",
+    "savingGoals": "Активні заощаджувальні цілі",
+    "savingGoalsShort": "Заощаджувальні цілі",
+    "savingGoalsDescription": "Короткий огляд ваших поточних цілей. Керуйте ними в розділі 'Фінансові цілі'."
+  },
+  "overview": {
+    "totalBudget": "Загальний бюджет",
+    "spent": "Витрачено",
+    "remaining": "Залишилося",
+    "plannedExpenses": "Заплановані витрати",
+    "actualExpenses": "Фактичні витрати",
+    "overspent": "Перевищено",
+    "overspentBy": "Перевищено на",
+    "nearLimit": "Наближається до ліміту"
+  },
+  "categories": {
+    "food": "Їжа",
+    "transport": "Транспорт",
+    "entertainment": "Розваги",
+    "utilities": "Комунальні послуги",
+    "healthcare": "Здоров'я",
+    "education": "Освіта",
+    "shopping": "Покупки",
+    "other": "Інше"
+  },
+  "actions": {
+    "addBudgetEntry": "Додати запис бюджету",
+    "editBudgetEntry": "Редагувати запис бюджету",
+    "deleteBudgetEntry": "Видалити запис бюджету",
+    "createBudgetPlan": "Створити план бюджету"
+  },
+  "periods": {
+    "monthly": "Щомісячно",
+    "weekly": "Щотижня",
+    "yearly": "Щорічно",
+    "once": "Одноразово"
+  },
+  "status": {
+    "onTrack": "В межах бюджету",
+    "overBudget": "Перевищення бюджету",
+    "underBudget": "Нижче бюджету"
+  },
+  "empty": {
+    "monthlyBudgets": "Щомісячні бюджети ще не додані",
+    "monthlyBudgetsDescription": "Додайте витратний запис з частотою 'Щомісячно' та вкажіть ліміт.",
+    "budgetEntries": "Записів у бюджеті поки немає",
+    "budgetEntriesDescription": "Почніть планувати свої доходи та витрати, додавши перший запис.",
+    "createFirst": "Створити перший бюджет"
+  },
+
+  "budgetEntries": "Записи бюджету",
+  "budgetEntriesDescription": "Плануйте та відстежуйте свої доходи та витрати",
+  "notifications": {
+    "editTitle": "Редагування",
+    "editDescription": "Для редагування перейдіть у розділ 'Фінансові цілі'",
+    "deleteTitle": "Видалення",
+    "deleteDescription": "Ви впевнені, що хочете видалити цю ціль?",
+    "deleteConfirm": "Видалити",
+    "deleteCancel": "Скасувати"
+  },
+  "messages": {
+    "budgetEntryAdded": "Запис бюджету успішно додано",
+    "budgetEntryUpdated": "Запис бюджету успішно оновлено",
+    "budgetEntryDeleted": "Запис бюджету успішно видалено",
+    "noBudgetEntries": "Записи бюджету не знайдено",
+    "addFirstEntry": "Додайте перший запис бюджету для початку",
+    "error": "Помилка",
+    "saveError": "Не вдалося зберегти запис: {{error}}"
+  },
+  "stats": {
+    "totalBudget": "Загальний бюджет",
+    "spent": "Витрачено",
+    "remaining": "Залишилось",
+    "overspent": "Перевищення",
+    "status": "Статус",
+    "allGood": "Все в нормі",
+    "categoriesOver": "перевищено",
+    "withinBudget": "В межах бюджету",
+    "needToCut": "Потрібно скоротити витрати",
+    "categories": "категорія",
+    "ofBudget": "від бюджету"
+  },
+  "charts": {
+    "budgetVsActual": "Бюджет vs Фактичні витрати",
+    "distribution": "Розподіл бюджету за категоріями",
+    "deviations": "Відхилення від бюджету (%)",
+    "budget": "Бюджет",
+    "actual": "Фактично",
+    "deviation": "Відхилення",
+    "deviationLabel": "Відхилення (%)"
+  },
+  "tabs": {
+    "overview": "Огляд",
+    "analytics": "Аналітика",
+    "list": "Список"
+  },
+  "card": {
+    "active": "Активна",
+    "inactive": "Неактивна",
+    "nextDate": "Наступна дата",
+    "dayOfMonth": "{{day}}-го числа",
+    "of": "з",
+    "edit": "Редагувати",
+    "delete": "Видалити"
+  },
+  "addBudgetEntryShort": "Додати",
+  "budgetLoading": "Завантаження бюджету..."
+}

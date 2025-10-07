@@ -1,0 +1,57 @@
+{
+  "title": "Tableau de Bord",
+  "subtitle": "Gérez vos finances efficacement",
+  "periodAnalysis": "Analyse de Période",
+  "periods": {
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "thisWeek": "Cette Semaine",
+    "lastWeek": "Semaine Dernière",
+    "thisMonth": "Ce Mois",
+    "lastMonth": "Mois Dernier",
+    "thisYear": "Cette Année",
+    "lastYear": "Année Dernière",
+    "custom": "Période Personnalisée",
+    "currentMonth": "Mois en Cours",
+    "currentYear": "Année en Cours",
+    "currentQuarter": "Trimestre en Cours",
+    "lastQuarter": "Trimestre Dernier"
+  },
+  "charts": {
+    "fundsFlow": "Flux de Fonds ({{period}})",
+    "fundsFlowDescription": "Revenus, dépenses et changement de solde. Cliquez sur le point pour les détails.",
+    "income": "Revenus",
+    "expenses": "Dépenses",
+    "balance": "Solde",
+    "expensesByCategory": "Dépenses par Catégorie",
+    "expensesByCategoryDescription": "Dépenses dans la catégorie \"{{category}}\" pour {{period}}, {{currency}}.",
+    "walletDistribution": "Distribution des Portefeuilles",
+    "walletDistributionDescription": "Solde total en {{currency}}",
+    "noData": "Pas de données",
+    "noExpensesData": "Pas de données de dépenses",
+    "noWalletData": "Pas de données de portefeuille",
+    "periodInCurrency": "{{period}} en {{currency}}"
+  },
+  "wallet": {
+    "showAll": "Afficher Tout",
+    "noWallets": "Pas de portefeuilles",
+    "noWalletsDescription": "Créez votre premier portefeuille pour suivre vos finances",
+    "transactions": "Transactions",
+    "operationsDescription": "Opérations pour le portefeuille \"{{wallet}}\" pour {{period}}.",
+    "dailyTransactions": "Transactions Quotidiennes"
+  },
+  "reports": {
+    "title": "Rapports",
+    "description": "Créez et exportez des rapports financiers",
+    "exportOptions": "Les options d'exportation (PDF/CSV) seront disponibles ici",
+    "create": "Créer un Rapport"
+  },
+  "overviewTotalBalance": "Solde Total",
+  "overviewTotalBalanceDescription": "Dans tous les portefeuilles ({{currency}})",
+  "overviewIncome": "Revenus ({{period}})",
+  "overviewIncomeDescription": "En {{currency}}",
+  "overviewExpenses": "Dépenses ({{period}})",
+  "overviewExpensesDescription": "En {{currency}}",
+  "overviewTransactions": "Transactions ({{period}})",
+  "overviewTransactionsDescription": "Total des transactions pour la période"
+}

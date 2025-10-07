@@ -1,0 +1,94 @@
+{
+  "loading": "Chargement...",
+  "validation": {
+    "required": "Ce champ est obligatoire",
+    "invalidAmount": "Format de montant invalide"
+  },
+  "buttons": {
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "add": "Ajouter"
+  },
+  "form": {
+    "walletName": "Nom du portefeuille",
+    "currencyLabel": "Devise",
+    "currencyPlaceholder": "Sélectionner une devise"
+  },
+  "categories": {
+    "other": "Autre",
+    "food": "Alimentation",
+    "housing": "Logement",
+    "salary": "Salaire",
+    "healthcare": "Santé",
+    "investment": "Investissement",
+    "utilities": "Services",
+    "crypto": "Cryptomonnaie",
+    "education": "Éducation",
+    "debtpayment": "Remboursement de dette",
+    "gifts": "Cadeaux",
+    "shopping": "Shopping",
+    "travel": "Voyages",
+    "entertainment": "Divertissement",
+    "transport": "Transport"
+  },
+  "transaction": {
+    "title": "Transactions",
+    "recentTransactions": "Transactions récentes",
+    "recentTransactionsWithPeriod": "Transactions pour {{period}}",
+    "recentTransactionsForWallet": "Transactions du portefeuille",
+    "date": "Date",
+    "description": "Description",
+    "category": "Catégorie",
+    "amount": "Montant",
+    "noTransactions": "Pas de transactions pour cette période",
+    "categories": {
+      "food": "Alimentation",
+      "transport": "Transport",
+      "housing": "Logement",
+      "utilities": "Services",
+      "entertainment": "Divertissement",
+      "healthcare": "Santé",
+      "education": "Éducation",
+      "salary": "Salaire",
+      "gifts": "Cadeaux",
+      "investment": "Investissement",
+      "crypto": "Cryptomonnaie",
+      "shopping": "Shopping",
+      "travel": "Voyages",
+      "debtpayment": "Remboursement de dette",
+      "other": "Autre"
+    }
+  },
+  "labels": {
+    "period": "Période",
+    "walletsTitle": "Mes portefeuilles",
+    "inCurrency": "en {{currency}}"
+  },
+  "user": {
+    "avatarAlt": "Avatar de l'utilisateur",
+    "defaultName": "Utilisateur",
+    "defaultUsername": "utilisateur"
+  },
+  "navigation": {
+    "dashboard": "Tableau de bord",
+    "budgeting": "Budget",
+    "lifeGoals": "Objectifs de vie",
+    "debts": "Dettes",
+    "aiAssistant": "Assistant IA",
+    "crypto": "Crypto",
+    "investment": "Investissement",
+    "settings": "Paramètres",
+    "menu": "Menu"
+  },
+  "theme": {
+    "light": "Thème clair",
+    "dark": "Thème sombre"
+  },
+  "app": {
+    "title": "Monifly - Gestion financière intelligente",
+    "description": "Prenez le contrôle de vos finances avec Monifly. Suivez les dépenses, gérez les portefeuilles et obtenez des conseils budgétaires basés sur l'IA.",
+    "slogan": "Gérez votre argent intelligemment"
+  }
+}

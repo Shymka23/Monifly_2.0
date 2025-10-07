@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "title": "Gestion Financière Intelligente",
+    "subtitle": "Prenez le contrôle de vos finances avec Monifly",
+    "startJourney": "Commencer",
+    "login": "Se connecter",
+    "signup": "S'inscrire"
+  },
+  "features": {
+    "analytics": {
+      "title": "Analytique",
+      "description": "Obtenez des analyses détaillées de vos dépenses et revenus"
+    },
+    "walletManagement": {
+      "title": "Gestion des Portefeuilles",
+      "description": "Gérez tous vos portefeuilles en un seul endroit"
+    },
+    "financialGoals": {
+      "title": "Objectifs Financiers",
+      "description": "Définissez et atteignez vos objectifs financiers"
+    },
+    "security": {
+      "title": "Sécurité",
+      "description": "Vos données sont protégées en toute sécurité"
+    }
+  },
+  "pricing": {
+    "title": "Choisissez votre Plan",
+    "free": {
+      "title": "Gratuit",
+      "features": {
+        "1": "Analytique de base",
+        "2": "Jusqu'à 3 portefeuilles",
+        "3": "Objectifs financiers de base",
+        "4": "Support de base"
+      }
+    },
+    "pro": {
+      "title": "Pro",
+      "price": "9,99€/mois",
+      "popular": "Populaire",
+      "features": {
+        "1": "Analytique avancée",
+        "2": "Portefeuilles illimités",
+        "3": "Objectifs financiers avancés",
+        "4": "Support prioritaire"
+      }
+    }
+  }
+}

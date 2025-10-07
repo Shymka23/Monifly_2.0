@@ -1,0 +1,177 @@
+{
+  "title": "Objetivos de Vida",
+  "subtitle": "Cree, siga y alcance sus aspiraciones vitales. Planifique eventos importantes.",
+
+  "sections": {
+    "goals": "Objetivos",
+    "goalsDescription": "Cree y administre sus objetivos de vida",
+    "calendar": "Calendario de Vida"
+  },
+
+  "goals": {
+    "title": "Objetivos",
+    "description": "Cree y administre sus objetivos de vida",
+    "placeholder": "Ingrese su objetivo",
+    "career": {
+      "title": "Objetivos de Carrera",
+      "add": "Agregar Objetivo de Carrera",
+      "label": "Objetivo de Carrera",
+      "placeholder": "Describa su aspiración profesional",
+      "cancel": "Cancelar",
+      "save": "Guardar"
+    }
+  },
+
+  "calendar": {
+    "yearLabel": "{{year}}: Edad {{age}}",
+    "description": "Su viaje por la vida, marcado por hitos y recuerdos",
+    "empty": {
+      "title": "Calendario Vacío",
+      "description": "Comienza a planificar tu vida agregando el primer hito",
+      "addFirst": "Agregar Primer Hito"
+    }
+  },
+
+  "yearLabel": "{{year}}: Edad {{age}}",
+  "empty": {
+    "description": "Comienza a planificar tu vida agregando el primer hito"
+  },
+
+  "milestoneProgress": {
+    "home": "Casa",
+    "progress": "{{percentage}}% completado"
+  },
+
+  "assetAllocation": {
+    "title": "Asignación de Activos",
+    "description": "Diversifique sus inversiones entre diferentes clases de activos",
+    "stocks": "Acciones",
+    "bonds": "Bonos",
+    "realEstate": "Bienes Raíces",
+    "cash": "Efectivo"
+  },
+
+  "inflation": {
+    "title": "Ajuste por Inflación",
+    "description": "Proteja sus objetivos financieros del impacto destructivo de la inflación"
+  },
+
+  "buttons": {
+    "title": "Acciones",
+    "description": "Administre y rastree sus objetivos de vida"
+  },
+
+  "loading": "Cargando...",
+
+  "futureVision": {
+    "title": "Visión Futura",
+    "description": "Defina su visión de vida a largo plazo y sus aspiraciones"
+  },
+
+  "addMilestone": "Agregar Hito",
+  "addFinancialGoal": "Agregar Meta Financiera",
+
+  "milestone": {
+    "title": "Título del Hito",
+    "titlePlaceholder": "Ingrese el título del hito",
+    "category": "Categoría",
+    "selectCategory": "Seleccionar categoría"
+  },
+
+  "categories": {
+    "career": "Carrera",
+    "family": "Familia",
+    "health": "Salud",
+    "education": "Educación",
+    "travel": "Viajes",
+    "other": "Otro"
+  },
+
+  "reminders": {
+    "title": "Recordatorios",
+    "titlePlaceholder": "Título del recordatorio",
+    "date": "Fecha",
+    "selectDate": "Seleccionar fecha",
+    "frequency": "Frecuencia",
+    "once": "Una vez",
+    "daily": "Diario",
+    "weekly": "Semanal",
+    "monthly": "Mensual",
+    "yearly": "Anual",
+    "priority": "Prioridad",
+    "description": "Descripción",
+    "descriptionPlaceholder": "Describir el recordatorio",
+    "addReminder": "Agregar Recordatorio",
+    "list": "Lista de Recordatorios",
+    "count": "recordatorios"
+  },
+
+  "priorities": {
+    "low": "Bajo",
+    "medium": "Medio",
+    "high": "Alto"
+  },
+
+  "financialGoals": {
+    "title": "Título de la Meta",
+    "titlePlaceholder": "Ingrese el título de la meta financiera",
+    "type": "Tipo",
+    "selectType": "Seleccionar tipo",
+    "income": "Ingresos",
+    "expense": "Gastos",
+    "investment": "Inversión",
+    "saving": "Ahorro",
+    "description": "Descripción",
+    "descriptionPlaceholder": "Describir la meta financiera",
+    "currentAmount": "Cantidad Actual",
+    "targetAmount": "Cantidad Objetivo",
+    "targetDate": "Fecha Objetivo",
+    "selectDate": "Seleccionar fecha",
+    "monthlyContribution": "Contribución Mensual",
+    "suggestedContribution": "Contribución Sugerida",
+    "perMonth": "por mes",
+    "suggestedDescription": "Cantidad recomendada para alcanzar la meta",
+    "isRecurring": "Meta Recurrente",
+    "additionalInfo": "Información Adicional",
+    "monthlyIncome": "Ingresos Mensuales",
+    "monthlyExpenses": "Gastos Mensuales",
+    "amount": "Cantidad",
+    "edit": "Editar Meta Financiera",
+    "empty": "No hay metas financieras"
+  },
+
+  "milestones": {
+    "title": "Hitos Personales",
+    "empty": "No hay hitos personales",
+    "edit": "Editar Hito"
+  },
+
+  "progress": {
+    "title": "Progreso",
+    "milestones": "Hitos",
+    "completed": "Completado",
+    "financialGoals": "Metas Financieras"
+  },
+
+  "status": {
+    "active": "Activo",
+    "completed": "Completado",
+    "paused": "Pausado"
+  },
+
+  "confirmations": {
+    "deleteMilestone": "¿Está seguro de que desea eliminar este hito?",
+    "deleteGoal": "¿Está seguro de que desea eliminar esta meta?"
+  },
+
+  "noData": {
+    "title": "Sin Datos",
+    "description": "Agregar metas para este año"
+  },
+
+  "common": {
+    "cancel": "Cancelar",
+    "add": "Agregar",
+    "save": "Guardar"
+  }
+}

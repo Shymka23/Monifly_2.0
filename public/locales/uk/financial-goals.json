@@ -1,0 +1,46 @@
+{
+  "title": "Фінансові цілі та Плани",
+  "subtitle": "Створюйте, відстежуйте та досягайте своїх фінансових прагнень. Плануйте важливі події.",
+  "sections": {
+    "goals": "Цілі",
+    "goalsDescription": "Створюйте та керуйте фінансовими цілями",
+    "activeGoals": "Активні цілі",
+    "calendar": "Календар",
+    "calendarDescription": "Календар подій",
+    "calendarFull": "Цілі ({{goals}}), операції ({{operations}}), нотатки ({{notes}})"
+  },
+  "actions": {
+    "addGoal": "Додати ціль",
+    "addGoalShort": "Додати",
+    "editGoal": "Редагувати ціль",
+    "deleteGoal": "Видалити ціль",
+    "markCompleted": "Відмітити як виконану",
+    "addNote": "Записати",
+    "addNoteShort": "Запис"
+  },
+  "types": {
+    "savings": "Накопичення",
+    "investment": "Інвестиції",
+    "debt": "Погашення боргу",
+    "purchase": "Велика покупка",
+    "emergency": "Резервний фонд"
+  },
+  "status": {
+    "active": "Активна",
+    "completed": "Виконана",
+    "paused": "Призупинена",
+    "cancelled": "Скасована"
+  },
+  "calendar": {
+    "eventsOn": "Події на",
+    "eventsOnDate": "Події на {{date}}"
+  },
+  "messages": {
+    "goalAdded": "Фінансову ціль успішно додано",
+    "goalUpdated": "Фінансову ціль успішно оновлено",
+    "goalDeleted": "Фінансову ціль успішно видалено",
+    "goalCompleted": "Вітаємо! Ціль досягнута!",
+    "noGoals": "Фінансові цілі не знайдено",
+    "addFirstGoal": "Встановіть свою першу фінансову ціль"
+  }
+}

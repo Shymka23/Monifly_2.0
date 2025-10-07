@@ -1,0 +1,177 @@
+{
+  "title": "Lebensziele",
+  "subtitle": "Erstellen, verfolgen und erreichen Sie Ihre Lebensträume. Planen Sie wichtige Ereignisse.",
+
+  "sections": {
+    "goals": "Ziele",
+    "goalsDescription": "Erstellen und verwalten Sie Ihre Lebensziele",
+    "calendar": "Lebenskalender"
+  },
+
+  "goals": {
+    "title": "Ziele",
+    "description": "Erstellen und verwalten Sie Ihre Lebensziele",
+    "placeholder": "Geben Sie Ihr Ziel ein",
+    "career": {
+      "title": "Karriereziele",
+      "add": "Karriereziel hinzufügen",
+      "label": "Karriereziel",
+      "placeholder": "Beschreiben Sie Ihren Karrieretraum",
+      "cancel": "Abbrechen",
+      "save": "Speichern"
+    }
+  },
+
+  "calendar": {
+    "yearLabel": "{{year}}: Alter {{age}}",
+    "description": "Ihre Reise durchs Leben, gekennzeichnet von Meilensteinen und Erinnerungen",
+    "empty": {
+      "title": "Leerer Kalender",
+      "description": "Beginnen Sie mit der Planung Ihres Lebens, indem Sie den ersten Meilenstein hinzufügen",
+      "addFirst": "Ersten Meilenstein hinzufügen"
+    }
+  },
+
+  "yearLabel": "{{year}}: Alter {{age}}",
+  "empty": {
+    "description": "Beginnen Sie mit der Planung Ihres Lebens, indem Sie den ersten Meilenstein hinzufügen"
+  },
+
+  "milestoneProgress": {
+    "home": "Haus",
+    "progress": "{{percentage}}% abgeschlossen"
+  },
+
+  "assetAllocation": {
+    "title": "Vermögensallokation",
+    "description": "Diversifizieren Sie Ihre Investitionen über verschiedene Anlageklassen",
+    "stocks": "Aktien",
+    "bonds": "Anleihen",
+    "realEstate": "Immobilien",
+    "cash": "Bargeld"
+  },
+
+  "inflation": {
+    "title": "Inflationsanpassung",
+    "description": "Schützen Sie Ihre finanziellen Ziele vor den zerstörerischen Auswirkungen der Inflation"
+  },
+
+  "buttons": {
+    "title": "Aktionen",
+    "description": "Verwalten und verfolgen Sie Ihre Lebensziele"
+  },
+
+  "loading": "Laden...",
+
+  "futureVision": {
+    "title": "Zukunftsvision",
+    "description": "Definieren Sie Ihre langfristige Lebensvision und Ihre Bestrebungen"
+  },
+
+  "addMilestone": "Meilenstein hinzufügen",
+  "addFinancialGoal": "Finanzziel hinzufügen",
+
+  "milestone": {
+    "title": "Meilenstein-Titel",
+    "titlePlaceholder": "Meilenstein-Titel eingeben",
+    "category": "Kategorie",
+    "selectCategory": "Kategorie auswählen"
+  },
+
+  "categories": {
+    "career": "Karriere",
+    "family": "Familie",
+    "health": "Gesundheit",
+    "education": "Bildung",
+    "travel": "Reisen",
+    "other": "Andere"
+  },
+
+  "reminders": {
+    "title": "Erinnerungen",
+    "titlePlaceholder": "Erinnerungstitel",
+    "date": "Datum",
+    "selectDate": "Datum auswählen",
+    "frequency": "Häufigkeit",
+    "once": "Einmal",
+    "daily": "Täglich",
+    "weekly": "Wöchentlich",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "priority": "Priorität",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Erinnerung beschreiben",
+    "addReminder": "Erinnerung hinzufügen",
+    "list": "Erinnerungsliste",
+    "count": "Erinnerungen"
+  },
+
+  "priorities": {
+    "low": "Niedrig",
+    "medium": "Mittel",
+    "high": "Hoch"
+  },
+
+  "financialGoals": {
+    "title": "Ziel-Titel",
+    "titlePlaceholder": "Finanzziel-Titel eingeben",
+    "type": "Typ",
+    "selectType": "Typ auswählen",
+    "income": "Einkommen",
+    "expense": "Ausgaben",
+    "investment": "Investition",
+    "saving": "Sparen",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Finanzziel beschreiben",
+    "currentAmount": "Aktueller Betrag",
+    "targetAmount": "Zielbetrag",
+    "targetDate": "Zieldatum",
+    "selectDate": "Datum auswählen",
+    "monthlyContribution": "Monatlicher Beitrag",
+    "suggestedContribution": "Empfohlener Beitrag",
+    "perMonth": "pro Monat",
+    "suggestedDescription": "Empfohlener Betrag zur Zielerreichung",
+    "isRecurring": "Wiederkehrendes Ziel",
+    "additionalInfo": "Zusätzliche Informationen",
+    "monthlyIncome": "Monatliches Einkommen",
+    "monthlyExpenses": "Monatliche Ausgaben",
+    "amount": "Betrag",
+    "edit": "Finanzziel bearbeiten",
+    "empty": "Keine Finanzziele"
+  },
+
+  "milestones": {
+    "title": "Persönliche Meilensteine",
+    "empty": "Keine persönlichen Meilensteine",
+    "edit": "Meilenstein bearbeiten"
+  },
+
+  "progress": {
+    "title": "Fortschritt",
+    "milestones": "Meilensteine",
+    "completed": "Abgeschlossen",
+    "financialGoals": "Finanzziele"
+  },
+
+  "status": {
+    "active": "Aktiv",
+    "completed": "Abgeschlossen",
+    "paused": "Pausiert"
+  },
+
+  "confirmations": {
+    "deleteMilestone": "Sind Sie sicher, dass Sie diesen Meilenstein löschen möchten?",
+    "deleteGoal": "Sind Sie sicher, dass Sie dieses Ziel löschen möchten?"
+  },
+
+  "noData": {
+    "title": "Keine Daten",
+    "description": "Ziele für dieses Jahr hinzufügen"
+  },
+
+  "common": {
+    "cancel": "Abbrechen",
+    "add": "Hinzufügen",
+    "save": "Speichern"
+  }
+}

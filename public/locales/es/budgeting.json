@@ -1,0 +1,165 @@
+{
+  "title": "Presupuestos y Planes",
+  "subtitle": "Planifique y controle su presupuesto de manera efectiva",
+  "budgetingPlanning": "Planificación de Presupuesto",
+  "budgetingPlanningDescription": "Cree y gestione sus planes de presupuesto",
+  "addBudgetEntry": "Añadir Entrada de Presupuesto",
+  "dialog": {
+    "title": "Nueva Entrada de Presupuesto",
+    "description": "Añada una nueva entrada de presupuesto regular o única.",
+    "edit_title": "Editar Entrada de Presupuesto",
+    "edit_description": "Actualice los detalles de la entrada de presupuesto.",
+    "description_label": "Descripción",
+    "description_placeholder": "Por ejemplo, Alquiler de Apartamento, Salario",
+    "description_required": "La descripción es obligatoria",
+    "amount_label": "Cantidad",
+    "amount_placeholder": "Por ejemplo, 50000",
+    "amount_required": "La cantidad es obligatoria",
+    "currency_label": "Moneda",
+    "currency_placeholder": "Seleccione moneda",
+    "currency_required": "La moneda es obligatoria",
+    "type_label": "Tipo",
+    "type_income": "Ingreso",
+    "type_expense": "Gasto",
+    "type_required": "El tipo es obligatorio",
+    "category_label": "Categoría",
+    "category_placeholder": "Seleccione categoría",
+    "category_required": "La categoría es obligatoria",
+    "frequency_label": "Frecuencia",
+    "frequency_placeholder": "Seleccione frecuencia",
+    "frequency_required": "La frecuencia es obligatoria",
+    "start_date_label": "Fecha de Inicio",
+    "start_date_placeholder": "Seleccione fecha",
+    "start_date_required": "La fecha de inicio es obligatoria",
+    "month_day_label": "Día del Mes",
+    "month_day_required": "El día del mes es obligatorio",
+    "limit_label": "Límite (opcional)",
+    "limit_placeholder": "Por ejemplo, 10000",
+    "saving": "Guardando...",
+    "submit": "Añadir Entrada",
+    "update": "Actualizar Entrada"
+  },
+  "validation": {
+    "description_min": "La descripción debe tener al menos 2 caracteres",
+    "description_max": "La descripción no puede exceder los 100 caracteres",
+    "amount_invalid": "Ingrese una cantidad válida",
+    "amount_positive": "La cantidad debe ser mayor que 0",
+    "amount_decimals": "Máximo 2 decimales",
+    "limit_invalid": "Ingrese un límite válido",
+    "limit_positive": "El límite debe ser mayor que 0",
+    "day_range": "El día debe estar entre 1 y 31"
+  },
+  "sections": {
+    "monthlyBudgets": "Presupuestos por Categoría (Mensual)",
+    "monthlyBudgetsShort": "Presupuestos Mensuales",
+    "monthlyBudgetsDescription": "Controle los gastos mensuales por categoría con límites establecidos. Progreso mostrado para el mes actual.",
+    "plannedOperations": "Ingresos Planificados y Gastos Únicos",
+    "plannedOperationsShort": "Operaciones Planificadas",
+    "plannedOperationsDescription": "Resumen de operaciones financieras futuras o únicas.",
+    "savingGoals": "Objetivos de Ahorro Activos",
+    "savingGoalsShort": "Objetivos de Ahorro",
+    "savingGoalsDescription": "Resumen rápido de sus objetivos actuales. Gestiónalos en la sección 'Objetivos Financieros'."
+  },
+  "overview": {
+    "totalBudget": "Presupuesto Total",
+    "spent": "Gastado",
+    "remaining": "Restante",
+    "plannedExpenses": "Gastos Planificados",
+    "actualExpenses": "Gastos Reales",
+    "overspent": "Excedido",
+    "overspentBy": "Excedido en",
+    "nearLimit": "Cerca del límite"
+  },
+  "categories": {
+    "food": "Comida",
+    "transport": "Transporte",
+    "entertainment": "Entretenimiento",
+    "utilities": "Servicios",
+    "healthcare": "Salud",
+    "education": "Educación",
+    "shopping": "Compras",
+    "other": "Otro"
+  },
+  "actions": {
+    "addBudgetEntry": "Añadir Entrada de Presupuesto",
+    "editBudgetEntry": "Editar Entrada de Presupuesto",
+    "deleteBudgetEntry": "Eliminar Entrada de Presupuesto",
+    "createBudgetPlan": "Crear Plan de Presupuesto"
+  },
+  "periods": {
+    "monthly": "Mensual",
+    "weekly": "Semanal",
+    "yearly": "Anual",
+    "once": "Una vez"
+  },
+  "status": {
+    "onTrack": "Dentro del Presupuesto",
+    "overBudget": "Sobre el Presupuesto",
+    "underBudget": "Bajo el Presupuesto"
+  },
+  "empty": {
+    "monthlyBudgets": "Aún no se han añadido presupuestos mensuales",
+    "monthlyBudgetsDescription": "Añada una entrada de gasto con frecuencia 'Mensual' y especifique un límite.",
+    "budgetEntries": "Aún no hay entradas de presupuesto",
+    "budgetEntriesDescription": "Comience a planificar sus ingresos y gastos añadiendo su primera entrada.",
+    "createFirst": "Crear primer presupuesto"
+  },
+
+  "budgetEntries": "Entradas de Presupuesto",
+  "budgetEntriesDescription": "Planifique y controle sus ingresos y gastos",
+  "notifications": {
+    "editTitle": "Editar",
+    "editDescription": "Para editar, vaya a la sección 'Objetivos Financieros'",
+    "deleteTitle": "Eliminar",
+    "deleteDescription": "¿Está seguro de que desea eliminar este objetivo?",
+    "deleteConfirm": "Eliminar",
+    "deleteCancel": "Cancelar"
+  },
+  "messages": {
+    "budgetEntryAdded": "Entrada de presupuesto añadida con éxito",
+    "budgetEntryUpdated": "Entrada de presupuesto actualizada con éxito",
+    "budgetEntryDeleted": "Entrada de presupuesto eliminada con éxito",
+    "noBudgetEntries": "No se encontraron entradas de presupuesto",
+    "addFirstEntry": "Añada su primera entrada de presupuesto para comenzar",
+    "error": "Error",
+    "saveError": "No se pudo guardar la entrada: {{error}}"
+  },
+  "stats": {
+    "totalBudget": "Presupuesto Total",
+    "spent": "Gastado",
+    "remaining": "Restante",
+    "overspent": "Excedido",
+    "status": "Estado",
+    "allGood": "Todo bien",
+    "categoriesOver": "excedido",
+    "withinBudget": "Dentro del presupuesto",
+    "needToCut": "Necesita reducir gastos",
+    "categories": "categoría",
+    "ofBudget": "del presupuesto"
+  },
+  "charts": {
+    "budgetVsActual": "Presupuesto vs Gastos Reales",
+    "distribution": "Distribución del presupuesto por categorías",
+    "deviations": "Desviaciones del presupuesto (%)",
+    "budget": "Presupuesto",
+    "actual": "Real",
+    "deviation": "Desviación",
+    "deviationLabel": "Desviación (%)"
+  },
+  "tabs": {
+    "overview": "Resumen",
+    "analytics": "Análisis",
+    "list": "Lista"
+  },
+  "card": {
+    "active": "Activa",
+    "inactive": "Inactiva",
+    "nextDate": "Próxima fecha",
+    "dayOfMonth": "Día {{day}} del mes",
+    "of": "de",
+    "edit": "Editar",
+    "delete": "Eliminar"
+  },
+  "addBudgetEntryShort": "Añadir",
+  "budgetLoading": "Cargando presupuesto..."
+}

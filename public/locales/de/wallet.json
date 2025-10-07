@@ -1,0 +1,16 @@
+{
+  "add": "Geldbörse hinzufügen",
+  "addTitle": "Neue Geldbörse hinzufügen",
+  "addDescription": "Erstellen Sie eine neue Geldbörse, um Ihre Finanzen zu verfolgen",
+  "iconLabel": "Symbol",
+  "nameLabel": "Geldbörsenname",
+  "namePlaceholder": "z.B. Sparkonto",
+  "colorLabel": "Farbe",
+  "currencyLabel": "Währung",
+  "currencyPlaceholder": "Währung auswählen",
+  "initialBalanceLabel": "Anfangssaldo",
+  "initialBalancePlaceholder": "z.B. 1000",
+  "cancel": "Abbrechen",
+  "added": "Geldbörse hinzugefügt",
+  "addedDescription": "Geldbörse \"{{name}}\" wurde erfolgreich erstellt"
+}

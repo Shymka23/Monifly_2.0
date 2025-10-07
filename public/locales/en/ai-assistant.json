@@ -1,0 +1,22 @@
+{
+  "title": "AI Financial Assistant",
+  "subtitle": "Ask questions about your finances, request savings advice or general investment information.",
+  "titleFull": "AI Financial Assistant",
+  "titleShort": "AI Assistant",
+  "subtitleFull": "Ask questions about your finances, request savings advice or general investment information.",
+  "subtitleShort": "Ask questions about finances",
+  "messages": {
+    "welcome": "Hello! I'm your AI financial assistant. How can I help you today?",
+    "error": "Sorry, I had a problem processing your request. Please try again.",
+    "errorTitle": "Error",
+    "errorDescription": "Failed to send message. Please try later.",
+    "placeholder": "Ask a question...",
+    "send": "Send"
+  },
+  "context": {
+    "currentBalances": "Current wallet balances:",
+    "recentTransactions": "Recent transactions (last 30 days):",
+    "noTransactions": "- No transactions in the last 30 days.",
+    "category": "Category"
+  }
+}

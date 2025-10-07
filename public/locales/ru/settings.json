@@ -1,0 +1,109 @@
+{
+  "title": "Настройки",
+  "subtitle": "Управляйте своей учетной записью и настройками приложения",
+  "personal": {
+    "title": "Личная информация",
+    "description": "Обновите данные профиля",
+    "changeAvatarButton": "Изменить аватар",
+    "removeAvatarButton": "Удалить аватар",
+    "saveChangesButton": "Сохранить изменения",
+    "firstNameLabel": "Имя",
+    "lastNameLabel": "Фамилия",
+    "emailLabel": "Email"
+  },
+  "notifications": {
+    "title": "Настройки уведомлений",
+    "description": "Управляйте уведомлениями и сообщениями",
+    "all": "Все уведомления",
+    "allDesc": "Включить или выключить все уведомления",
+    "email": "Email уведомления",
+    "emailDesc": "Получать уведомления на email",
+    "push": "Push уведомления",
+    "pushDesc": "Получать уведомления в браузере",
+    "marketing": "Маркетинговые email",
+    "marketingDesc": "Получать новости и предложения"
+  },
+  "security": {
+    "title": "Настройки безопасности",
+    "description": "Управляйте безопасностью аккаунта",
+    "autoBackup": "Автоматическое резервное копирование",
+    "autoBackupDesc": "Автоматически сохранять данные в облаке",
+    "dataRetention": "Хранение данных",
+    "dataRetention_6_months": "6 месяцев",
+    "dataRetention_1_year": "1 год",
+    "dataRetention_2_years": "2 года",
+    "dataRetention_forever": "Навсегда",
+    "sessionTimeout": "Таймаут сессии",
+    "timeout_15_min": "15 минут",
+    "timeout_30_min": "30 минут",
+    "timeout_1_hour": "1 час",
+    "timeout_4_hours": "4 часа",
+    "timeout_never": "Никогда"
+  },
+  "display": {
+    "title": "Настройки отображения",
+    "description": "Персонализируйте отображение данных",
+    "language": "Язык интерфейса",
+    "currency": "Отображение валюты",
+    "currencyPrimary": "Основная валюта",
+    "currencyAll": "Все валюты",
+    "currencyConverted": "Конвертирована в основную",
+    "dateFormat": "Формат даты",
+    "timeFormat": "Формат времени",
+    "time24": "24-часовой",
+    "time12": "12-часовой"
+  },
+  "quickActions": {
+    "title": "Быстрые действия",
+    "description": "Часто используемые настройки",
+    "editProfile": "Редактировать профиль",
+    "exportData": "Экспорт данных",
+    "changePassword": "Изменить пароль"
+  },
+  "subscription": {
+    "title": "Управление подпиской",
+    "description": "Ваш текущий план и опции",
+    "currentPlan": "Текущий план",
+    "nextPaymentDate": "Дата следующего платежа",
+    "upgradeYearly": "Pro на год (50 EUR/год)",
+    "bestValue": "Выгодно",
+    "upgradeMonthly": "Pro помесячно (5 EUR/мес)",
+    "cancel": "Отменить подписку",
+    "dialog": {
+      "monthlyTitle": "Подтвердите ежемесячную подписку",
+      "monthlyDescription": "Вы оформляете подписку Monifly Pro за 5 EUR в месяц. Вы можете отменить её в любой момент.",
+      "monthlyAction": "Оплатить 5 EUR",
+      "yearlyTitle": "Подтвердите годовую подписку",
+      "yearlyDescription": "Вы оформляете подписку Monifly Pro за 50 EUR в год. Вы можете отменить её в любой момент.",
+      "yearlyAction": "Оплатить 50 EUR",
+      "cancelTitle": "Отменить подписку?",
+      "cancelDescription": "Вы уверены, что хотите отменить подписку? Доступ к Pro-функциям будет потерян после завершения текущего оплаченного периода.",
+      "cancelAction": "Да, отменить"
+    }
+  },
+  "accountSettings": {
+    "title": "Настройки аккаунта",
+    "description": "Безопасность и действия с аккаунтом",
+    "twoFactorAuthLabel": "Двухфакторная аутентификация",
+    "twoFactorAuthDescription": "Дополнительная защита вашего аккаунта",
+    "twoFactorAuthEnabledToast": "Двухфакторная аутентификация включена",
+    "twoFactorAuthDisabledToast": "Двухфакторная аутентификация выключена",
+    "changePasswordButton": "Изменить пароль",
+    "exportDataButton": "Экспорт данных",
+    "deleteAccountButton": "Удалить аккаунт",
+    "dangerZone": "Опасная зона",
+    "dangerZoneDesc": "Эти действия нельзя отменить"
+  },
+  "accountInfo": {
+    "title": "Информация об аккаунте",
+    "description": "Детали вашего аккаунта и активности",
+    "registrationDate": "Дата регистрации",
+    "emailVerified": "Email подтвержден",
+    "yes": "Да",
+    "lastLogin": "Последний вход",
+    "interfaceLanguage": "Язык интерфейса",
+    "usageStats": "Статистика использования",
+    "transactions": "Транзакций",
+    "goals": "Целей"
+  }
+}
