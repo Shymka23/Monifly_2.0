@@ -8,6 +8,7 @@
  */
 
 import { ai } from "@/ai/genkit";
+// @ts-ignore - Ігноруємо помилку типів для genkit
 import { z } from "genkit";
 import { toast } from '@/hooks/use-toast';
 

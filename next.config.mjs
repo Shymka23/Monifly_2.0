@@ -57,6 +57,38 @@ const nextConfig = {
       },
     });
 
+    // Виключаємо проблемні модулі з клієнтського білду
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        module: false,
+        path: false,
+      };
+    }
+
+    // Додаємо noop для handlebars
+    config.module.rules.push({
+      test: /node_modules\/handlebars\/lib\/index\.js$/,
+      use: [
+        {
+          loader: "string-replace-loader",
+          options: {
+            search: "require.extensions",
+            replace: "({})",
+          },
+        },
+      ],
+    });
+
+    // Виключаємо genkit з клієнтського білду
+    if (!isServer) {
+      config.module.rules.push({
+        test: /\/(genkit|@genkit-ai)\/.*\.m?js$/,
+        use: "null-loader",
+      });
+    }
+
     return config;
   },
 };
