@@ -1,0 +1,396 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User Model
+model User {
+  id                String              @id @default(uuid())
+  email             String              @unique
+  password          String
+  name              String?
+  avatar            String?
+  emailVerified     DateTime?
+  currency          String              @default("USD")
+  language          String              @default("uk")
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  
+  // Relations
+  wallets           Wallet[]
+  transactions      Transaction[]
+  budgetCategories  BudgetCategory[]
+  financialGoals    FinancialGoal[]
+  debts             Debt[]
+  cryptoHoldings    CryptoHolding[]
+  investmentCases   InvestmentCase[]
+  lifeCalendar      LifeCalendarEntry[]
+  subscriptions     Subscription[]
+  refreshTokens     RefreshToken[]
+  settings          UserSettings?
+  
+  @@map("users")
+  @@index([email])
+}
+
+// User Settings
+model UserSettings {
+  id                    String   @id @default(uuid())
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Life Planning Settings
+  currentAge            Int?
+  targetAge             Int?
+  retirementAge         Int?
+  
+  // Notification Settings
+  browserNotifications  Boolean  @default(true)
+  emailNotifications    Boolean  @default(false)
+  notificationFrequency String   @default("weekly")
+  
+  // Display Settings
+  theme                 String   @default("light")
+  primaryCurrency       String   @default("USD")
+  
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@map("user_settings")
+}
+
+// Wallet Model
+model Wallet {
+  id          String        @id @default(uuid())
+  userId      String
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  type        String        // cash, bank, card, crypto, investment
+  balance     Float         @default(0)
+  currency    String        @default("USD")
+  color       String?
+  icon        String?
+  isDefault   Boolean       @default(false)
+  isActive    Boolean       @default(true)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  
+  // Relations
+  transactions Transaction[]
+  
+  @@map("wallets")
+  @@index([userId])
+}
+
+// Transaction Model
+model Transaction {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  walletId    String
+  wallet      Wallet   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  
+  type        String   // income, expense, transfer
+  category    String   // salary, food, transport, etc.
+  amount      Float
+  currency    String   @default("USD")
+  description String?
+  date        DateTime @default(now())
+  
+  // Additional fields
+  tags        String[] @default([])
+  location    String?
+  receipt     String?  // URL to receipt image
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("transactions")
+  @@index([userId, date])
+  @@index([walletId])
+  @@index([category])
+}
+
+// Budget Category Model
+model BudgetCategory {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  name        String
+  type        String   // income, expense
+  category    String
+  limit       Float?
+  spent       Float    @default(0)
+  period      String   @default("monthly") // daily, weekly, monthly, yearly
+  color       String?
+  icon        String?
+  
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@map("budget_categories")
+  @@index([userId])
+}
+
+// Financial Goal Model
+model FinancialGoal {
+  id                  String   @id @default(uuid())
+  userId              String
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  title               String
+  description         String?
+  type                String   // saving, investment, purchase, debt_payoff
+  targetAmount        Float
+  currentAmount       Float    @default(0)
+  currency            String   @default("USD")
+  targetDate          DateTime
+  monthlyContribution Float?
+  
+  // Metadata
+  priority            Int      @default(0)
+  status              String   @default("active") // active, completed, paused, cancelled
+  category            String?
+  imageUrl            String?
+  
+  isRecurring         Boolean  @default(false)
+  reminderEnabled     Boolean  @default(true)
+  
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  
+  @@map("financial_goals")
+  @@index([userId, status])
+}
+
+// Debt Model
+model Debt {
+  id              String        @id @default(uuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type            String        // loan, credit, mortgage, personal
+  title           String
+  personName      String?       // For personal debts
+  initialAmount   Float
+  paidAmount      Float         @default(0)
+  currency        String        @default("USD")
+  interestRate    Float?
+  
+  startDate       DateTime
+  dueDate         DateTime?
+  nextDueDate     DateTime?
+  
+  description     String?
+  status          String        @default("active") // active, paid, overdue
+  
+  isActive        Boolean       @default(true)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  
+  // Relations
+  payments        DebtPayment[]
+  
+  @@map("debts")
+  @@index([userId, status])
+}
+
+// Debt Payment Model
+model DebtPayment {
+  id          String   @id @default(uuid())
+  debtId      String
+  debt        Debt     @relation(fields: [debtId], references: [id], onDelete: Cascade)
+  
+  amount      Float
+  currency    String   @default("USD")
+  date        DateTime @default(now())
+  description String?
+  
+  createdAt   DateTime @default(now())
+  
+  @@map("debt_payments")
+  @@index([debtId])
+}
+
+// Crypto Holding Model
+model CryptoHolding {
+  id            String   @id @default(uuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  asset         String   // BTC, ETH, etc.
+  symbol        String
+  amount        Float
+  purchasePrice Float
+  currentPrice  Float
+  currency      String   @default("USD")
+  purchaseDate  DateTime
+  
+  walletAddress String?
+  notes         String?
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  @@map("crypto_holdings")
+  @@index([userId])
+}
+
+// Investment Case Model
+model InvestmentCase {
+  id              String            @id @default(uuid())
+  userId          String
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  name            String
+  title           String
+  description     String?
+  totalInvestment Float             @default(0)
+  currentValue    Float             @default(0)
+  currency        String            @default("USD")
+  startDate       DateTime          @default(now())
+  
+  strategy        String?           // aggressive, moderate, conservative
+  riskLevel       String?           // low, medium, high
+  
+  isActive        Boolean           @default(true)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  
+  // Relations
+  assets          InvestmentAsset[]
+  
+  @@map("investment_cases")
+  @@index([userId])
+}
+
+// Investment Asset Model
+model InvestmentAsset {
+  id            String         @id @default(uuid())
+  caseId        String
+  case          InvestmentCase @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  
+  name          String
+  type          String         // stocks, bonds, etf, real_estate, crypto
+  quantity      Float
+  purchasePrice Float
+  currentPrice  Float
+  currency      String         @default("USD")
+  purchaseDate  DateTime
+  
+  ticker        String?
+  region        String?        // us, europe, asia, etc.
+  sector        String?
+  
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  @@map("investment_assets")
+  @@index([caseId])
+}
+
+// Life Calendar Entry Model
+model LifeCalendarEntry {
+  id                  String          @id @default(uuid())
+  userId              String
+  user                User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  year                Int
+  age                 Int?
+  
+  // Financial data
+  income              Float?
+  expenses            Float?
+  savings             Float?
+  netWorth            Float?
+  
+  // Life events
+  events              String[]        @default([])
+  notes               String?
+  mood                String?         // great, good, neutral, bad
+  
+  // Status
+  isCompleted         Boolean         @default(false)
+  completionDate      DateTime?
+  
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+  
+  // Relations
+  milestones          Milestone[]
+  
+  @@map("life_calendar_entries")
+  @@unique([userId, year])
+  @@index([userId, year])
+}
+
+// Milestone Model
+model Milestone {
+  id              String            @id @default(uuid())
+  calendarId      String
+  calendar        LifeCalendarEntry @relation(fields: [calendarId], references: [id], onDelete: Cascade)
+  
+  title           String
+  description     String?
+  type            String            // financial, personal, career, health, education
+  targetDate      DateTime
+  targetAmount    Float?
+  currentAmount   Float?
+  
+  status          String            @default("pending") // pending, in_progress, completed, cancelled
+  priority        Int               @default(0)
+  
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  
+  @@map("milestones")
+  @@index([calendarId])
+}
+
+// Subscription Model (for recurring payments)
+model Subscription {
+  id              String   @id @default(uuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  name            String
+  category        String
+  amount          Float
+  currency        String   @default("USD")
+  billingCycle    String   // daily, weekly, monthly, yearly
+  nextBillingDate DateTime
+  
+  isActive        Boolean  @default(true)
+  reminderEnabled Boolean  @default(true)
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@map("subscriptions")
+  @@index([userId])
+}
+
+// Refresh Token Model (for JWT auth)
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  token     String   @unique
+  expiresAt DateTime
+  
+  createdAt DateTime @default(now())
+  
+  @@map("refresh_tokens")
+  @@index([userId])
+  @@index([token])
+}
