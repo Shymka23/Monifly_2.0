@@ -26,7 +26,7 @@ import { AddFinancialGoalDialog } from "@/components/financial-goals/add-financi
 import { FinancialGoalCard } from "@/components/financial-goals/financial-goal-card";
 import { AddBudgetEntryDialog } from "@/components/budgeting/AddBudgetEntryDialog";
 import { Calendar } from "@/components/ui/calendar";
-import type { DayContentProps } from "react-day-picker";
+import type { DayProps } from "react-day-picker";
 import {
   format,
   parseISO,
@@ -369,8 +369,8 @@ export default function FinancialGoalsPage() {
     setNoteToDeleteId(null);
   };
 
-  function CustomDayContent(props: DayContentProps) {
-    const dateStr = format(props.date, "yyyy-MM-dd");
+  function CustomDayContent(props: DayProps) {
+    const dateStr = format(props.day.date, "yyyy-MM-dd");
     const goalsForDay = goalsByDateMap.get(dateStr);
     const budgetEventsForDay = budgetEntriesByDateMap.get(dateStr);
     const notesForDay = calendarNotesByDateMap.get(dateStr);
@@ -413,7 +413,7 @@ export default function FinancialGoalsPage() {
           <NotebookPen className="absolute bottom-0.5 right-0.5 h-2 w-2 text-yellow-500 opacity-80" />
         )}
         <span className="z-10 relative text-[0.65rem] font-medium">
-          {format(props.date, "d")}
+          {format(props.day.date, "d")}
         </span>
       </div>
     );
@@ -561,7 +561,7 @@ export default function FinancialGoalsPage() {
                         !combinedEventDates.some(gd => isSameDay(gd, date));
                       return isPastNonEventDate;
                     }}
-                    captionLayout="dropdown-buttons"
+                    captionLayout="dropdown"
                     fromYear={new Date().getFullYear() - 5}
                     toYear={new Date().getFullYear() + 10}
                     classNames={{
@@ -594,7 +594,7 @@ export default function FinancialGoalsPage() {
                       table: "w-full border-collapse",
                       row: "flex w-full mt-px",
                     }}
-                    components={{ DayContent: CustomDayContent }}
+                    components={{ Day: CustomDayContent }}
                   />
                 </div>
               </CardContent>
