@@ -2,12 +2,6 @@ import nodemailer from "nodemailer";
 import { config } from "@/lib/env";
 
 // Типи помилок
-interface SMTPError extends Error {
-  code?: string;
-  responseCode?: number;
-  command?: string;
-}
-
 export class EmailError extends Error {
   constructor(message: string, public code: string, public details?: unknown) {
     super(message);
@@ -15,20 +9,24 @@ export class EmailError extends Error {
   }
 }
 
-// Конфігурація транспортера
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: config.GMAIL_USER,
-    pass: config.GMAIL_APP_PASSWORD,
-  },
-  // Додаткові налаштування
-  pool: true, // Використовувати пул з'єднань
-  maxConnections: 5, // Максимальна кількість одночасних з'єднань
-  maxMessages: 100, // Максимальна кількість повідомлень на з'єднання
-  rateDelta: 1000, // Мінімальний час між відправками (мс)
-  rateLimit: 5, // Максимальна кількість повідомлень за rateDelta
-});
+// Перевіряємо, чи налаштована відправка емейлів
+const isEmailConfigured = Boolean(config.GMAIL_USER && config.GMAIL_APP_PASSWORD);
+
+// Створюємо транспортер тільки якщо є конфігурація
+const transporter = isEmailConfigured
+  ? nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: config.GMAIL_USER,
+        pass: config.GMAIL_APP_PASSWORD,
+      },
+      pool: true,
+      maxConnections: 5,
+      maxMessages: 100,
+      rateDelta: 1000,
+      rateLimit: 5,
+    })
+  : null;
 
 interface EmailOptions {
   to: string | string[];
@@ -47,10 +45,20 @@ export async function sendEmail({
   to,
   subject,
   html,
-  from = config.GMAIL_USER,
+  from,
   attachments,
   priority = "normal",
-}: EmailOptions): Promise<nodemailer.SentMessageInfo> {
+}: EmailOptions): Promise<nodemailer.SentMessageInfo | null> {
+  // Якщо емейли не налаштовані, логуємо і повертаємо null
+  if (!isEmailConfigured || !transporter) {
+    console.log("Email service not configured. Would send:", {
+      to,
+      subject,
+      priority,
+    });
+    return null;
+  }
+
   try {
     // Перевірка з'єднання
     await transporter.verify();
@@ -59,7 +67,7 @@ export async function sendEmail({
     const message = {
       from: {
         name: "Monifly",
-        address: from,
+        address: from || config.GMAIL_USER,
       },
       to,
       subject,
@@ -84,15 +92,14 @@ export async function sendEmail({
   } catch (error) {
     console.error("Error sending email:", error);
 
-    // Приводимо помилку до типу SMTPError
-    const smtpError = error as SMTPError;
-
     // Обробка специфічних помилок
+    const smtpError = error as { code?: string; responseCode?: number };
+
     if (smtpError.code === "ECONNREFUSED") {
       throw new EmailError(
         "Не вдалося підключитися до поштового сервера",
         "CONNECTION_ERROR",
-        smtpError
+        error
       );
     }
 
@@ -100,7 +107,7 @@ export async function sendEmail({
       throw new EmailError(
         "Помилка автентифікації. Перевірте налаштування SMTP",
         "AUTH_ERROR",
-        smtpError
+        error
       );
     }
 
@@ -108,7 +115,7 @@ export async function sendEmail({
       throw new EmailError(
         "Помилка відправки. Перевірте правильність адреси отримувача",
         "DELIVERY_ERROR",
-        smtpError
+        error
       );
     }
 
@@ -117,10 +124,12 @@ export async function sendEmail({
   }
 }
 
-// Перевірка з'єднання при старті
-transporter
-  .verify()
-  .then(() => console.log("Email service is ready"))
-  .catch((error: Error) =>
-    console.error("Email service verification failed:", error)
-  );
+// Перевірка з'єднання при старті, якщо сервіс налаштований
+if (isEmailConfigured && transporter) {
+  transporter
+    .verify()
+    .then(() => console.log("Email service is ready"))
+    .catch(error => console.error("Email service verification failed:", error));
+} else {
+  console.log("Email service is not configured");
+}
