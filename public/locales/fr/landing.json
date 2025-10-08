@@ -46,5 +46,10 @@
         "4": "Support prioritaire"
       }
     }
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "poweredBy": "Propulsé par",
+    "and": "et"
   }
 }

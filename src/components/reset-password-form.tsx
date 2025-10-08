@@ -5,19 +5,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useTranslation } from "react-i18next";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 
 const schema = z
   .object({
-    email: z.string().email("Невірний формат email"),
     password: z.string().min(8, "Пароль має бути не менше 8 символів"),
     confirmPassword: z.string(),
-    firstName: z.string().min(2, "Ім'я має бути не менше 2 символів"),
-    lastName: z.string().min(2, "Прізвище має бути не менше 2 символів"),
   })
   .refine(data => data.password === data.confirmPassword, {
     message: "Паролі не співпадають",
@@ -26,10 +22,12 @@ const schema = z
 
 type FormData = z.infer<typeof schema>;
 
-export default function SignUp() {
+export function ResetPasswordForm() {
   const { t } = useTranslation();
   const { toast } = useToast();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -41,23 +39,35 @@ export default function SignUp() {
   });
 
   const onSubmit = async (data: FormData) => {
+    if (!token) {
+      toast({
+        title: "Помилка!",
+        description: "Токен для скидання паролю не знайдено",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoading(true);
     try {
-      const response = await fetch("/api/auth/signup", {
+      const response = await fetch("/api/auth/reset-password/confirm", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          token,
+          password: data.password,
+        }),
       });
 
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Помилка при реєстрації");
+        throw new Error(result.error || "Помилка при зміні паролю");
       }
 
       toast({
         title: "Успішно!",
-        description: "Ваш обліковий запис створено",
+        description: "Ваш пароль було успішно змінено",
       });
 
       router.push("/login");
@@ -73,60 +83,43 @@ export default function SignUp() {
     }
   };
 
+  if (!token) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen p-4">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-destructive">
+            {t("resetPassword.invalidToken")}
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {t("resetPassword.invalidTokenDescription")}
+          </p>
+          <Button
+            className="mt-4"
+            onClick={() => router.push("/forgot-password")}
+          >
+            {t("resetPassword.requestNewToken")}
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <h1 className="text-2xl font-bold">{t("signup.title")}</h1>
+          <h1 className="text-2xl font-bold">{t("resetPassword.title")}</h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            {t("signup.description")}
+            {t("resetPassword.description")}
           </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-2">
             <Input
-              {...register("firstName")}
-              placeholder={t("signup.firstNamePlaceholder")}
-              disabled={isLoading}
-            />
-            {errors.firstName && (
-              <p className="text-sm text-destructive">
-                {errors.firstName.message}
-              </p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Input
-              {...register("lastName")}
-              placeholder={t("signup.lastNamePlaceholder")}
-              disabled={isLoading}
-            />
-            {errors.lastName && (
-              <p className="text-sm text-destructive">
-                {errors.lastName.message}
-              </p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Input
-              {...register("email")}
-              type="email"
-              placeholder={t("signup.emailPlaceholder")}
-              disabled={isLoading}
-            />
-            {errors.email && (
-              <p className="text-sm text-destructive">{errors.email.message}</p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Input
               {...register("password")}
               type="password"
-              placeholder={t("signup.passwordPlaceholder")}
+              placeholder={t("resetPassword.newPasswordPlaceholder")}
               disabled={isLoading}
             />
             {errors.password && (
@@ -140,7 +133,7 @@ export default function SignUp() {
             <Input
               {...register("confirmPassword")}
               type="password"
-              placeholder={t("signup.confirmPasswordPlaceholder")}
+              placeholder={t("resetPassword.confirmPasswordPlaceholder")}
               disabled={isLoading}
             />
             {errors.confirmPassword && (
@@ -151,18 +144,11 @@ export default function SignUp() {
           </div>
 
           <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? t("signup.signingUp") : t("signup.signUp")}
+            {isLoading
+              ? t("resetPassword.resetting")
+              : t("resetPassword.resetButton")}
           </Button>
         </form>
-
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground">
-            {t("signup.haveAccount")}{" "}
-            <Link href="/login" className="text-primary hover:text-primary/90">
-              {t("signup.signIn")}
-            </Link>
-          </p>
-        </div>
       </div>
     </div>
   );

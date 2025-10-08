@@ -1,94 +1,21 @@
 {
-  "loading": "Завантаження...",
-  "validation": {
-    "required": "Це поле обов'язкове",
-    "invalidAmount": "Невірний формат суми"
-  },
-  "buttons": {
-    "cancel": "Скасувати",
-    "delete": "Видалити",
-    "save": "Зберегти",
-    "edit": "Редагувати",
-    "add": "Додати"
-  },
-  "form": {
-    "walletName": "Назва гаманця",
-    "currencyLabel": "Валюта",
-    "currencyPlaceholder": "Оберіть валюту"
-  },
-  "categories": {
-    "other": "Інше",
-    "food": "Їжа",
-    "housing": "Житло",
-    "salary": "Зарплата",
-    "healthcare": "Здоров'я",
-    "investment": "Інвестиції",
-    "utilities": "Комунальні послуги",
-    "crypto": "Криптовалюта",
-    "education": "Освіта",
-    "debtpayment": "Платіж по боргу",
-    "gifts": "Подарунки",
-    "shopping": "Покупки",
-    "travel": "Подорожі",
-    "entertainment": "Розваги",
-    "transport": "Транспорт"
-  },
-  "transaction": {
-    "title": "Транзакції",
-    "recentTransactions": "Останні транзакції",
-    "recentTransactionsWithPeriod": "Транзакції за {{period}}",
-    "recentTransactionsForWallet": "Транзакції по гаманцю",
-    "date": "Дата",
-    "description": "Опис",
-    "category": "Категорія",
-    "amount": "Сума",
-    "noTransactions": "Немає транзакцій за цей період",
-    "categories": {
-      "food": "Їжа",
-      "transport": "Транспорт",
-      "housing": "Житло",
-      "utilities": "Комунальні послуги",
-      "entertainment": "Розваги",
-      "healthcare": "Здоров'я",
-      "education": "Освіта",
-      "salary": "Зарплата",
-      "gifts": "Подарунки",
-      "investment": "Інвестиції",
-      "crypto": "Криптовалюта",
-      "shopping": "Покупки",
-      "travel": "Подорожі",
-      "debtpayment": "Платіж по боргу",
-      "other": "Інше"
-    }
-  },
-  "labels": {
-    "period": "Період",
-    "walletsTitle": "Мої гаманці",
-    "inCurrency": "в {{currency}}"
-  },
-  "user": {
-    "avatarAlt": "Аватар користувача",
-    "defaultName": "Користувач",
-    "defaultUsername": "користувач"
-  },
   "navigation": {
-    "dashboard": "Панель управління",
-    "budgeting": "Бюджетування",
+    "menu": "Меню",
+    "close": "Закрити",
+    "dashboard": "Головна",
+    "budgeting": "Бюджет",
     "lifeGoals": "Життєві цілі",
     "debts": "Борги",
-    "aiAssistant": "AI Помічник",
-    "crypto": "Крипто",
+    "aiAssistant": "AI Асистент",
+    "crypto": "Криптовалюта",
     "investment": "Інвестиції",
-    "settings": "Налаштування",
-    "menu": "Меню"
+    "settings": "Налаштування"
   },
   "theme": {
-    "light": "Світла тема",
     "dark": "Темна тема"
   },
-  "app": {
-    "title": "Monifly - Розумне управління фінансами",
-    "description": "Візьміть під контроль свої фінанси з Monifly. Відстежуйте витрати, керуйте гаманцями та отримуйте поради щодо бюджетування на базі ШІ.",
-    "slogan": "Керуйте своїми грошима розумно"
+  "loading": "Завантаження...",
+  "buttons": {
+    "cancel": "Скасувати"
   }
 }

@@ -1,55 +1,40 @@
 "use client";
 
 import { useState } from "react";
-import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useTranslation } from "@/hooks/use-translation";
+import { z } from "zod";
+import { useTranslation } from "react-i18next";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Mail, Loader2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
-const forgotPasswordSchema = z.object({
+const schema = z.object({
   email: z.string().email("Невірний формат email"),
 });
 
-type ForgotPasswordForm = z.infer<typeof forgotPasswordSchema>;
+type FormData = z.infer<typeof schema>;
 
-export default function ForgotPasswordPage() {
+export default function ForgotPassword() {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<ForgotPasswordForm>({
-    resolver: zodResolver(forgotPasswordSchema),
-    defaultValues: {
-      email: "",
-    },
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema),
   });
 
-  const onSubmit = async (data: ForgotPasswordForm) => {
+  const onSubmit = async (data: FormData) => {
+    setIsLoading(true);
     try {
-      setIsLoading(true);
       const response = await fetch("/api/auth/reset-password", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
@@ -60,18 +45,14 @@ export default function ForgotPasswordPage() {
       }
 
       toast({
-        title: "Успіх",
+        title: "Успішно!",
         description: "Інструкції для скидання паролю відправлені на вашу пошту",
       });
-
-      form.reset();
     } catch (error) {
       toast({
-        title: "Помилка",
+        title: "Помилка!",
         description:
-          error instanceof Error
-            ? error.message
-            : "Помилка при відправці запиту",
+          error instanceof Error ? error.message : "Щось пішло не так",
         variant: "destructive",
       });
     } finally {
@@ -80,46 +61,44 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="container flex h-screen w-screen flex-col items-center justify-center">
-      <Card className="w-full max-w-lg">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl">Відновлення паролю</CardTitle>
-          <CardDescription>
-            Введіть email, і ми надішлемо вам інструкції для відновлення паролю
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <div className="relative">
-                        <Mail className="absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                        <Input
-                          type="email"
-                          placeholder="your@email.com"
-                          {...field}
-                          className="pl-8"
-                        />
-                      </div>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Відправити інструкції
-              </Button>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+      <div className="w-full max-w-md space-y-8">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold">{t("forgotPassword.title")}</h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {t("forgotPassword.description")}
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="space-y-2">
+            <Input
+              {...register("email")}
+              type="email"
+              placeholder={t("forgotPassword.emailPlaceholder")}
+              disabled={isLoading}
+            />
+            {errors.email && (
+              <p className="text-sm text-destructive">{errors.email.message}</p>
+            )}
+          </div>
+
+          <Button type="submit" className="w-full" disabled={isLoading}>
+            {isLoading
+              ? t("forgotPassword.sending")
+              : t("forgotPassword.sendButton")}
+          </Button>
+        </form>
+
+        <div className="text-center">
+          <Link
+            href="/login"
+            className="text-sm text-primary hover:text-primary/90"
+          >
+            {t("forgotPassword.backToLogin")}
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

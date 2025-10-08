@@ -1,47 +1,79 @@
-export class AppError extends Error {
+export class BaseError extends Error {
   constructor(
-    public message: string,
-    public statusCode: number = 500,
-    public details?: any
+    message: string,
+    public code: string,
+    public originalError?: unknown
   ) {
     super(message);
-    this.name = "AppError";
+    this.name = this.constructor.name;
   }
 }
 
-export class ValidationError extends AppError {
-  constructor(message: string, details?: any) {
-    super(message, 400, details);
-    this.name = "ValidationError";
+export class ValidationError extends BaseError {
+  constructor(message: string, public errors: unknown[]) {
+    super(message, "VALIDATION_ERROR");
+    this.errors = errors;
   }
 }
 
-export class AuthError extends AppError {
+export class NotFoundError extends BaseError {
   constructor(message: string) {
-    super(message, 401);
-    this.name = "AuthError";
+    super(message, "NOT_FOUND");
   }
 }
 
-export class NotFoundError extends AppError {
+export class AuthError extends BaseError {
   constructor(message: string) {
-    super(message, 404);
-    this.name = "NotFoundError";
+    super(message, "AUTH_ERROR");
   }
 }
 
-export function handleError(error: unknown) {
-  if (error instanceof AppError) {
-    return {
-      error: error.message,
-      details: error.details,
-      status: error.statusCode,
-    };
+export class EmailError extends BaseError {
+  constructor(
+    message: string,
+    code:
+      | "SERVICE_UNAVAILABLE"
+      | "CLIENT_ERROR"
+      | "SERVER_ERROR"
+      | "AUTH_ERROR"
+      | "RATE_LIMIT_EXCEEDED"
+      | "UNKNOWN_ERROR",
+    originalError?: unknown
+  ) {
+    super(message, code, originalError);
   }
-
-  console.error("Unexpected error:", error);
-  return {
-    error: "Внутрішня помилка сервера",
-    status: 500,
-  };
 }
+
+export const handleError = (
+  error: unknown
+): { error: string; status: number } => {
+  if (error instanceof ValidationError) {
+    return { error: error.message, status: 400 };
+  }
+  if (error instanceof NotFoundError) {
+    return { error: error.message, status: 404 };
+  }
+  if (error instanceof AuthError) {
+    return { error: error.message, status: 401 };
+  }
+  if (error instanceof EmailError) {
+    switch (error.code) {
+      case "SERVICE_UNAVAILABLE":
+        return { error: error.message, status: 503 };
+      case "CLIENT_ERROR":
+        return { error: error.message, status: 400 };
+      case "SERVER_ERROR":
+        return { error: error.message, status: 500 };
+      case "AUTH_ERROR":
+        return { error: error.message, status: 401 };
+      case "RATE_LIMIT_EXCEEDED":
+        return { error: error.message, status: 429 };
+      default:
+        return { error: error.message, status: 500 };
+    }
+  }
+  if (error instanceof Error) {
+    return { error: error.message, status: 500 };
+  }
+  return { error: "An unknown error occurred", status: 500 };
+};

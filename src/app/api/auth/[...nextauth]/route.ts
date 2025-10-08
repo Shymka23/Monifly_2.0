@@ -3,6 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { config } from "@/lib/env";
 import api from "@/lib/api";
 import { logger } from "@/lib/logger";
+import { prisma } from "@/lib/prisma";
 
 const authOptions: NextAuthOptions = {
   providers: [
@@ -31,11 +32,6 @@ const authOptions: NextAuthOptions = {
           const { user, accessToken } = data;
 
           if (user && accessToken) {
-            // Store the token
-            if (typeof window !== "undefined") {
-              localStorage.setItem("accessToken", accessToken);
-            }
-
             return {
               id: user.id,
               email: user.email,
