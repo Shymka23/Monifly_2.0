@@ -17,5 +17,16 @@
   "loading": "Завантаження...",
   "buttons": {
     "cancel": "Скасувати"
+  },
+  "login": {
+    "title": "Вхід",
+    "description": "Увійдіть у свій обліковий запис",
+    "emailPlaceholder": "Електронна пошта",
+    "passwordPlaceholder": "Пароль",
+    "forgotPassword": "Забули пароль?",
+    "signIn": "Увійти",
+    "signingIn": "Вхід...",
+    "noAccount": "Немає облікового запису?",
+    "signUp": "Зареєструватися"
   }
 }
